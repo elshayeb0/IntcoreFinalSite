@@ -6,7 +6,14 @@ export default {
   ],
   theme: {
     extend: {
-      // We will add our custom brand colors here later
+      colors: {
+        'page-background': '#232931',
+        'section': '#0D0E10',
+        'card': '#131416',
+        'accent': '#e97176',
+        'secondary': '#a9a9b3',
+        'border-custom': 'rgba(255, 255, 255, 0.1)',
+      }
     },
   },
   plugins: [],

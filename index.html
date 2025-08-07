@@ -1,15 +1,212 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Intcore |Home Page| Replica Build</title>
-    <link rel="stylesheet" href="src/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Intcore | Home Page</title>
+  <link rel="icon" type="image/x-icon" href="public/images/Intcore Logo.webp" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="stylesheet" href="/css/style.css" />
 </head>
-<body class="bg-[#060709] text-white">
 
-   
+<body class="bg-page-background text-white font-sans">
+  <header id="header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-12 px-12 md:px-8">
+    <div class="container mx-auto flex justify-between items-center">
 
-    <script type="module" src="src/main.js"></script>
+      <!-- Upper Top Left Intcore Logo -->
+
+      <div class="flex-shrink-0">
+        <a href="#">
+          <img src="public/images/34_logo.svg" alt="Intcore Logo" class="h-12" />
+        </a>
+      </div>
+
+      <!-- Main Navigation Bar -->
+
+      <nav class="hidden md:flex flex-grow justify-center">
+
+        <!-- Main Navigation Links -->
+
+        <div class="flex items-center bg-card p-2 rounded-full space-x-2">
+          <a href="#home"
+            class="text-white hover:bg-page-background px-4 py-2 rounded-full transition-colors duration-300">Home</a>
+
+          <!-- Dropdown Item: Products -->
+
+          <div class="relative group">
+            <button
+              class="flex items-center gap-x-2 text-white hover:bg-page-background px-4 py-2 rounded-full transition-colors duration-300">
+              <span>Products</span>
+              <i class="fas fa-caret-down text-xs transition-transform duration-300 group-hover:rotate-180"></i>
+            </button>
+
+            <!-- Products Dropdown Menu -->
+
+            <div
+              class="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-64 bg-card rounded-lg shadow-lg p-2 opacity-0 group-hover:opacity-100 transition-all duration-700 ease-in-out pointer-events-none group-hover:pointer-events-auto">
+              <a href="#" class="block px-4 py-2 hover:text-white hover:bg-page-background rounded-md">E-Commerce Mobile
+                App</a>
+              <a href="#" class="block px-4 py-2 hover:text-white hover:bg-page-background rounded-md">Event & Ticketing
+                App</a>
+              <a href="#" class="block px-4 py-2 hover:text-white hover:bg-page-background rounded-md">Solevato</a>
+              <a href="#" class="block px-4 py-2 hover:text-white hover:bg-page-background rounded-md">CMS System</a>
+            </div>
+          </div>
+
+          <!-- Dropdown Item: Services -->
+
+          <div class="relative group">
+            <button
+              class="flex items-center gap-x-2 text-white hover:bg-page-background px-4 py-2 rounded-full transition-colors duration-300">
+              <span>Services</span>
+              <i class="fas fa-caret-down text-xs transition-transform duration-300 group-hover:rotate-180"></i>
+            </button>
+
+            <!-- Services Dropdown Menu -->
+
+            <div
+              class="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-64 bg-card rounded-lg shadow-lg p-2 opacity-0 group-hover:opacity-100 transition-all duration-700 ease-in-out pointer-events-none group-hover:pointer-events-auto">
+              <a href="#"
+                class="flex items-center gap-x-3 p-2 hover:text-white hover:bg-page-background rounded-md transition-colors duration-200">
+                <span class="flex items-center justify-center w-8 h-8 bg-page-background rounded-md">
+                  <img src="https://intcore-website-s3.s3.eu-central-1.amazonaws.com/images/menu-icons/drafting.svg"
+                    class="h-5 w-5" alt="Creative Design Icon" />
+                </span>
+                <span>Creative Design & UI/UX Design</span>
+              </a>
+
+              <a href="#"
+                class="flex items-center gap-x-3 p-2 hover:text-white hover:bg-page-background rounded-md transition-colors duration-200">
+                <span class="flex items-center justify-center w-8 h-8 bg-page-background rounded-md">
+                  <img src="https://intcore-website-s3.s3.eu-central-1.amazonaws.com/images/menu-icons/chart-line.svg"
+                    class="h-5 w-5" alt="Digital Marketing Icon" />
+                </span>
+                <span>Digital Marketing</span>
+              </a>
+
+              <a href="#"
+                class="flex items-center gap-x-3 p-2 hover:text-white hover:bg-page-background rounded-md transition-colors duration-200">
+                <span class="flex items-center justify-center w-8 h-8 bg-page-background rounded-md">
+                  <img src="https://intcore-website-s3.s3.eu-central-1.amazonaws.com/images/menu-icons/mobile-alt.svg"
+                    class="h-5 w-5" alt="Mobile App Icon" />
+                </span>
+                <span>Mobile App Development</span>
+              </a>
+
+              <a href="#"
+                class="flex items-center gap-x-3 p-2 hover:text-white hover:bg-page-background rounded-md transition-colors duration-200">
+                <span class="flex items-center justify-center w-8 h-8 bg-page-background rounded-md">
+                  <img src="https://intcore-website-s3.s3.eu-central-1.amazonaws.com/images/menu-icons/desktop.svg"
+                    class="h-5 w-5" alt="Web App Icon" />
+                </span>
+                <span>Web App Development</span>
+              </a>
+
+              <a href="#"
+                class="flex items-center gap-x-3 p-2 hover:text-white hover:bg-page-background rounded-md transition-colors duration-200">
+                <span class="flex items-center justify-center w-8 h-8 bg-page-background rounded-md">
+                  <img src="https://intcore-website-s3.s3.eu-central-1.amazonaws.com/images/menu-icons/consulting.svg"
+                    class="h-5 w-5" alt="Consultancy Icon" />
+                </span>
+                <span>Technical Consultancy & DevOps Service</span>
+              </a>
+
+              <a href="#"
+                class="flex items-center gap-x-3 p-2 hover:text-white hover:bg-page-background rounded-md transition-colors duration-200">
+                <span class="flex items-center justify-center w-8 h-8 bg-page-background rounded-md">
+                  <img src="https://intcore-website-s3.s3.eu-central-1.amazonaws.com/images/menu-icons/server.svg"
+                    class="h-5 w-5" alt="Hosting Icon" />
+                </span>
+                <span>Hosting & Servers</span>
+              </a>
+
+              <a href="#"
+                class="flex items-center gap-x-3 p-2 hover:text-white hover:bg-page-background rounded-md transition-colors duration-200">
+                <span class="flex items-center justify-center w-8 h-8 bg-page-background rounded-md">
+                  <img src="https://intcore-website-s3.s3.eu-central-1.amazonaws.com/images/menu-icons/ai-chatbot.svg"
+                    class="h-5 w-5" alt="Hosting Icon" />
+                </span>
+                <span>AI Chatbot</span>
+              </a>
+
+              <a href="#"
+                class="flex items-center gap-x-3 p-2 hover:text-white hover:bg-page-background rounded-md transition-colors duration-200">
+                <span class="flex items-center justify-center w-8 h-8 bg-page-background rounded-md">
+                  <img src="https://intcore-website-s3.s3.eu-central-1.amazonaws.com/images/menu-icons/ai-automation.jpg"
+                    class="h-5 w-5" alt="Hosting Icon" />
+                </span>
+                <span>AI Automation Solutions</span>
+              </a>
+
+              <a href="#"
+                class="flex items-center gap-x-3 p-2 hover:text-white hover:bg-page-background rounded-md transition-colors duration-200">
+                <span class="flex items-center justify-center w-8 h-8 bg-page-background rounded-md">
+                  <img src="https://intcore-website-s3.s3.eu-central-1.amazonaws.com/images/menu-icons/ai-consultation.png"
+                    class="h-5 w-5" alt="Hosting Icon" />
+                </span>
+                <span>AI Strategy Consultation</span>
+              </a>
+
+            </div>
+          </div>
+
+          <a href="#casestudies"
+            class="text-white hover:bg-page-background px-4 py-2 rounded-full transition-colors duration-300">Case
+            Studies</a>
+
+          <!-- Dropdown Item: Company -->
+
+          <div class="relative group">
+            <button
+              class="flex items-center gap-x-2 text-white hover:bg-page-background px-4 py-2 rounded-full transition-colors duration-300">
+              <span>Company</span>
+              <i class="fas fa-caret-down text-xs transition-transform duration-300 group-hover:rotate-180"></i>
+            </button>
+
+            <!-- Company Dropdown Menu -->
+
+            <div
+              class="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-64 bg-card rounded-lg shadow-lg p-2 opacity-0 group-hover:opacity-100 transition-all duration-700 ease-in-out pointer-events-none group-hover:pointer-events-auto">
+              <a href="#"
+                class="block px-4 py-2 hover:text-white hover:bg-page-background rounded-md">About Us</a>
+              <a href="#"
+                class="block px-4 py-2 hover:text-white hover:bg-page-background rounded-md">Careers</a>
+            </div>
+          </div>
+
+          <a href="#blog"
+            class="text-white hover:bg-page-background px-4 py-2 rounded-full transition-colors duration-300">Blog</a>
+        </div>
+      </nav>
+
+      <!-- Phone Number -->
+
+      <div class="hidden md:flex items-center gap-x-6 flex-shrink-0">
+        <a href="https://wa.me/971586651844" target="_blank"
+          class="text-white font-semibold hover:text-accent transition-colors duration-300">
+          +971 58 665 1844
+        </a>
+        <a href="#contact"
+          class="text-white font-semibold py-3 px-6 rounded-full bg-accent hover:bg-white hover:text-accent transition-colors duration-300 uppercase">
+          Contact Us
+        </a>
+      </div>
+
+      <!-- 3. MOBILE BURGER ICON -->
+      <div class="md:hidden">
+        <button id="mobile-menu-button" class="text-2xl text-white cursor-pointer">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main></main>
+
+  <footer></footer>
+
+  <script type="module" src="/js/main.js"></script>
 </body>
+
 </html>
