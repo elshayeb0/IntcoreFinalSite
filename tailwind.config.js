@@ -8,6 +8,8 @@ export default {
     extend: {
       colors: {
         'page-background': '#232931',
+        'service-background': '#f5f5f4',
+        'trusted-background': '#fefefe',
         'section': '#0D0E10',
         'card': '#131416',
         'accent': '#e97176',
