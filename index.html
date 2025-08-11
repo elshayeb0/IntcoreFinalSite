@@ -5,37 +5,37 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Intcore | Home Page</title>
-  <link rel="icon" type="image/x-icon" href="/images/Intcore Logo.webp" />
+  <link rel="icon" type="image/x-icon" href="/src/assets/images/Intcore Logo.webp" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/src/css/style.css" />
 </head>
 
-<body class="bg-page-background text-white font-sans">
+<body class="bg-page-background text-white">
   <header id="header"
     class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-12 px-12 md:px-8 bg-page-background">
     <div class="container mx-auto flex justify-between items-center">
       <!-- Upper Top Left Intcore Logo -->
 
       <div class="flex-shrink-0">
-        <a href="#">
-          <img src="/images/34_logo.svg" alt="Intcore Logo" class="h-12" />
+        <a href="#home">
+          <img id="header-logo" src="/src/assets/images/34_logo.svg" alt="Intcore Logo"
+            class="h-12 transition-all duration-300" />
         </a>
       </div>
 
       <!-- Main Navigation Bar -->
 
-      <nav class="hidden md:flex flex-grow justify-center text-xl ">
+      <nav class="hidden md:flex flex-grow justify-center text-lg ">
+
         <!-- Main Navigation Links -->
 
-        <div class="flex items-center bg-card p-2 rounded-full space-x-2 py-4 px-4 w-110">
-          <a href="#home"
-            class="text-white hover:bg-page-background px-4 py-2 rounded-full transition-colors duration-300">Home</a>
+        <div class="nav-pill space-x-0 overflow-x-auto">
+          <a href="#home" class="nav-link">Home</a>
 
           <!-- Dropdown Item: Products -->
 
           <div class="relative group">
-            <button
-              class="flex items-center gap-x-2 text-white hover:bg-page-background px-4 py-2 rounded-full transition-colors duration-300">
+            <button class="nav-link flex items-center gap-x-2">
               <span>Products</span>
               <i class="fas fa-caret-down text-xs transition-transform duration-300 group-hover:rotate-180"></i>
             </button>
@@ -43,21 +43,20 @@
             <!-- Products Dropdown Menu -->
 
             <div
-              class="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-64 bg-card rounded-lg shadow-lg p-2 opacity-0 group-hover:opacity-100 transition-all duration-700 ease-in-out pointer-events-none group-hover:pointer-events-auto">
-              <a href="#" class="block px-4 py-2 hover:text-white hover:bg-page-background rounded-md">E-Commerce Mobile
+              class="absolute top-full left-0 mt-3 w-64 bg-card rounded-lg shadow-lg p-2 opacity-0 group-hover:opacity-100 transition-all duration-700 pointer-events-none ease-in-out group-hover:pointer-events-auto z-50">
+              <a href="#" class="block px-4 py-2 hover:text-accent rounded-md">E-Commerce Mobile
                 App</a>
-              <a href="#" class="block px-4 py-2 hover:text-white hover:bg-page-background rounded-md">Event & Ticketing
+              <a href="https://treffenapp.com/" class="block px-4 py-2 hover:text-accent  rounded-md">Event & Ticketing
                 App</a>
-              <a href="#" class="block px-4 py-2 hover:text-white hover:bg-page-background rounded-md">Solevato</a>
-              <a href="#" class="block px-4 py-2 hover:text-white hover:bg-page-background rounded-md">CMS System</a>
+              <a href="https://solevato.com/" class="block px-4 py-2 hover:text-accent rounded-md">Solevato</a>
+              <a href="#" class="block px-4 py-2 hover:text-accent  rounded-md">CMS System</a>
             </div>
           </div>
 
           <!-- Dropdown Item: Services -->
 
           <div class="relative group">
-            <button
-              class="flex items-center gap-x-2 text-white hover:bg-page-background px-4 py-2 rounded-full transition-colors duration-300">
+            <button class="nav-link flex items-center gap-x-2">
               <span>Services</span>
               <i class="fas fa-caret-down text-xs transition-transform duration-300 group-hover:rotate-180"></i>
             </button>
@@ -65,9 +64,9 @@
             <!-- Services Dropdown Menu -->
 
             <div
-              class="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-64 bg-card rounded-lg shadow-lg p-2 opacity-0 group-hover:opacity-100 transition-all duration-700 ease-in-out pointer-events-none group-hover:pointer-events-auto">
+              class="absolute top-full left-0 mt-3 w-64 bg-card rounded-lg shadow-lg p-2 opacity-0 group-hover:opacity-100 transition-all duration-700 pointer-events-none ease-in-out group-hover:pointer-events-auto z-50">
               <a href="#"
-                class="flex items-center gap-x-3 p-2 hover:text-white hover:bg-page-background rounded-md transition-colors duration-200">
+                class="flex items-center gap-x-3 p-2 hover:text-accent rounded-md transition-colors duration-200">
                 <span class="flex items-center justify-center w-8 h-8 bg-page-background rounded-md">
                   <img src="https://intcore-website-s3.s3.eu-central-1.amazonaws.com/images/menu-icons/drafting.svg"
                     class="h-5 w-5" alt="Creative Design Icon" />
@@ -76,7 +75,7 @@
               </a>
 
               <a href="#"
-                class="flex items-center gap-x-3 p-2 hover:text-white hover:bg-page-background rounded-md transition-colors duration-200">
+                class="flex items-center gap-x-3 p-2 hover:text-accent  rounded-md transition-colors duration-200">
                 <span class="flex items-center justify-center w-8 h-8 bg-page-background rounded-md">
                   <img src="https://intcore-website-s3.s3.eu-central-1.amazonaws.com/images/menu-icons/chart-line.svg"
                     class="h-5 w-5" alt="Digital Marketing Icon" />
@@ -85,7 +84,7 @@
               </a>
 
               <a href="#"
-                class="flex items-center gap-x-3 p-2 hover:text-white hover:bg-page-background rounded-md transition-colors duration-200">
+                class="flex items-center gap-x-3 p-2 hover:text-accent  rounded-md transition-colors duration-200">
                 <span class="flex items-center justify-center w-8 h-8 bg-page-background rounded-md">
                   <img src="https://intcore-website-s3.s3.eu-central-1.amazonaws.com/images/menu-icons/mobile-alt.svg"
                     class="h-5 w-5" alt="Mobile App Icon" />
@@ -94,7 +93,7 @@
               </a>
 
               <a href="#"
-                class="flex items-center gap-x-3 p-2 hover:text-white hover:bg-page-background rounded-md transition-colors duration-200">
+                class="flex items-center gap-x-3 p-2 hover:text-accent  rounded-md transition-colors duration-200">
                 <span class="flex items-center justify-center w-8 h-8 bg-page-background rounded-md">
                   <img src="https://intcore-website-s3.s3.eu-central-1.amazonaws.com/images/menu-icons/desktop.svg"
                     class="h-5 w-5" alt="Web App Icon" />
@@ -103,7 +102,7 @@
               </a>
 
               <a href="#"
-                class="flex items-center gap-x-3 p-2 hover:text-white hover:bg-page-background rounded-md transition-colors duration-200">
+                class="flex items-center gap-x-3 p-2 hover:text-accent  rounded-md transition-colors duration-200">
                 <span class="flex items-center justify-center w-8 h-8 bg-page-background rounded-md">
                   <img src="https://intcore-website-s3.s3.eu-central-1.amazonaws.com/images/menu-icons/consulting.svg"
                     class="h-5 w-5" alt="Consultancy Icon" />
@@ -112,7 +111,7 @@
               </a>
 
               <a href="#"
-                class="flex items-center gap-x-3 p-2 hover:text-white hover:bg-page-background rounded-md transition-colors duration-200">
+                class="flex items-center gap-x-3 p-2 hover:text-accent  rounded-md transition-colors duration-200">
                 <span class="flex items-center justify-center w-8 h-8 bg-page-background rounded-md">
                   <img src="https://intcore-website-s3.s3.eu-central-1.amazonaws.com/images/menu-icons/server.svg"
                     class="h-5 w-5" alt="Hosting Icon" />
@@ -121,7 +120,7 @@
               </a>
 
               <a href="#"
-                class="flex items-center gap-x-3 p-2 hover:text-white hover:bg-page-background rounded-md transition-colors duration-200">
+                class="flex items-center gap-x-3 p-2 hover:text-accent  rounded-md transition-colors duration-200">
                 <span class="flex items-center justify-center w-8 h-8 bg-page-background rounded-md">
                   <img src="https://intcore-website-s3.s3.eu-central-1.amazonaws.com/images/menu-icons/ai-chatbot.svg"
                     class="h-5 w-5" alt="Hosting Icon" />
@@ -130,7 +129,7 @@
               </a>
 
               <a href="#"
-                class="flex items-center gap-x-3 p-2 hover:text-white hover:bg-page-background rounded-md transition-colors duration-200">
+                class="flex items-center gap-x-3 p-2 hover:text-accent  rounded-md transition-colors duration-200">
                 <span class="flex items-center justify-center w-8 h-8 bg-page-background rounded-md">
                   <img
                     src="https://intcore-website-s3.s3.eu-central-1.amazonaws.com/images/menu-icons/ai-automation.jpg"
@@ -140,7 +139,7 @@
               </a>
 
               <a href="#"
-                class="flex items-center gap-x-3 p-2 hover:text-white hover:bg-page-background rounded-md transition-colors duration-200">
+                class="flex items-center gap-x-3 p-2 hover:text-accent  rounded-md transition-colors duration-200">
                 <span class="flex items-center justify-center w-8 h-8 bg-page-background rounded-md">
                   <img
                     src="https://intcore-website-s3.s3.eu-central-1.amazonaws.com/images/menu-icons/ai-consultation.png"
@@ -151,15 +150,12 @@
             </div>
           </div>
 
-          <a href="#casestudies"
-            class="text-white hover:bg-page-background px-4 py-2 rounded-full transition-colors duration-300">Case
-            Studies</a>
+          <a href="#casestudies" class="nav-link">Case Studies</a>
 
           <!-- Dropdown Item: Company -->
 
           <div class="relative group">
-            <button
-              class="flex items-center gap-x-2 text-white hover:bg-page-background px-4 py-2 rounded-full transition-colors duration-300">
+            <button class="nav-link flex items-center gap-x-2">
               <span>Company</span>
               <i class="fas fa-caret-down text-xs transition-transform duration-300 group-hover:rotate-180"></i>
             </button>
@@ -167,16 +163,16 @@
             <!-- Company Dropdown Menu -->
 
             <div
-              class="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-64 bg-card rounded-lg shadow-lg p-2 opacity-0 group-hover:opacity-100 transition-all duration-700 ease-in-out pointer-events-none group-hover:pointer-events-auto">
-              <a href="#" class="block px-4 py-2 hover:text-white hover:bg-page-background rounded-md">About Us</a>
-              <a href="#" class="block px-4 py-2 hover:text-white hover:bg-page-background rounded-md">Careers</a>
+              class="absolute top-full left-0 mt-3 w-64 bg-card rounded-lg shadow-lg p-2 opacity-0 group-hover:opacity-100 transition-all duration-700 pointer-events-auto ease-in-out group-hover:pointer-events-auto z-50">
+              <a href="about.html" class="block px-4 py-2 hover:text-accent rounded-md">About Us</a>
+              <a href="#" class="block px-4 py-2 hover:text-accent rounded-md">Careers</a>
             </div>
           </div>
 
-          <a href="#blog"
-            class="text-white hover:bg-page-background px-4 py-2 rounded-full transition-colors duration-300">Blog</a>
+          <a href="#blog" class="nav-link">Blog</a>
         </div>
       </nav>
+
 
       <!-- Phone Number -->
 
@@ -191,26 +187,41 @@
         </a>
       </div>
 
-      <!-- Mobile Icon-->
+      <!-- Mobile Menu Button -->
       <div class="md:hidden">
-        <button id="mobile-menu-button" class="text-2xl text-white cursor-pointer">
+        <button id="mobile-menu-button" class="text-2xl text-white cursor-pointer z-20 relative">
           <i class="fas fa-bars"></i>
         </button>
       </div>
     </div>
+
+    <!-- Mobile Navigation Menu (Overlay) -->
+    <div id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-page-background/95 backdrop-blur-sm pt-28 px-8 z-10">
+      <nav class="flex flex-col items-center text-center space-y-8 text-xl">
+        <a href="#home" class="mobile-nav-link">Home</a>
+        <a href="#services" class="mobile-nav-link">Services</a>
+        <a href="#casestudies" class="mobile-nav-link">Case Studies</a>
+        <a href="#blog" class="mobile-nav-link">Blog</a>
+        <div class="pt-8">
+          <a href="#contact" class="btn btn-accent uppercase">Contact Us</a>
+        </div>
+      </nav>
+    </div>
   </header>
+
+
 
   <main>
     <section id="home" class="relative overflow-hidden pt-40 pb-20 md:pt-48 md:pb-32">
       <div class="container mx-auto px-4">
-        <div class="grid md:grid-cols-2 gap-16 items-center">
+        <div class="grid md:grid-cols-2 gap-28 items-center">
           <!-- Left Column: Content -->
 
-          <div class="text-left space-y-8">
+          <div class="text-left space-y-16">
             <div>
               <h1 class="text-5xl lg:text-6xl font-extrabold leading-tight">
                 Be a Part of Our
-                <span class="text-accent">Success Stories</span>
+                <span class="highlight-underline text-white">Success Stories</span>
               </h1>
               <p class="mt-6 text-2xl text-secondary">
                 <span class="text-white font-bold text-3xl">Intcore is</span><br />
@@ -219,16 +230,16 @@
               </p>
             </div>
 
-            <a href="#contact"
-              class="inline-flex items-center gap-x-3 text-accent font-semibold py-3 px-8 rounded-full bg-white hover:bg-accent hover:text-white transition-all duration-300 w-auto text-lg border-2 border-accent">
+            <a href="#contact" data-modal-target="#quotation-modal"
+              class="btn-animated inline-flex items-center gap-x-3 text-accent font-semibold py-3 px-8 rounded-full bg-white hover:bg-accent hover:text-white transition-all duration-300 w-auto text-lg2">
               <span>Get Quotation</span>
-              <span class="font-bold text-2xl leading-none">&raquo;</span>
+              <i class="fa-solid fa-angles-right text-black"></i>
             </a>
 
             <!-- Awards Logos -->
 
             <div class="flex items-center gap-x-4 pt-4">
-              <img src="/images/Reviews.webp" alt="Sortlist Reviews" class="h-22 w-auto" />
+              <img src="/src/assets/images/Reviews.webp" alt="Sortlist Reviews" class="h-22 w-auto" />
             </div>
           </div>
 
@@ -285,45 +296,75 @@
           </div>
         </div>
       </div>
+
+      <!--<div class="header_svg">
+        <img src="https://intcore-website-s3.s3.eu-central-1.amazonaws.com/images/header-pattern.svg" alt="header"
+          title="header" class=" top-0 left-0 w-full h-full object-fit opacity-100" />
+      </div>-->
+
     </section>
 
-    <!-- Experience Bar Section -->
+    <!-- AWARDS CARD SECTION v2.2 (Continuous Scroll Animation) -->
 
-    <section id="awards-card" class="relative -mt-16 z-10">
-      <div class="container mx-auto px-4">
-        <div class="bg-white text-gray-800 rounded-2xl shadow-2xl p-8 max-w-4xl mx-auto">
-          <div class="flex flex-col md:flex-row justify-between items-center gap-8">
-            <!-- Left Column: Years Experience -->
-            <div class="flex items-center gap-x-4 flex-shrink-0">
-              <span class="text-5xl font-bold text-accent">10+</span>
-              <p class="text-lg leading-tight font-semibold">
-                Years Experience<br />
-                <span class="text-black-500 font-normal">With Global Awards</span>
-              </p>
+    <section id="awards-card" class="relative -mt-20 z-10">
+      <div class="container">
+        <div class="bg-white text-gray-800 rounded-3xl shadow-2xl p-8 max-w-5xl mx-auto">
+          <div class="flex flex-col md:flex-row justify-between items-center gap-8 md:gap-6">
+
+            <!-- Left Column (30% width on desktop) -->
+            <div class="w-full md:w-3/12 text-center">
+              <span class="text-6xl font-extrabold text-accent">10+</span>
+              <h3 class="text-xl leading-tight font-semibold mt-2">
+                Years Experience
+                <span class="block text-gray-500 font-normal text-base">With Global Awards</span>
+              </h3>
             </div>
 
             <!-- Divider -->
-            <div class="w-px h-16 bg-gray-200 hidden md:block"></div>
+            <div class="w-full md:w-px h-px md:h-24 bg-gray-400"></div>
 
-            <!-- Right Column: Award Logos -->
-            <div class="flex items-center gap-x-6">
-              <img src="https://intcore-website-s3.s3.eu-central-1.amazonaws.com/images/awards/img_2.webp"
-                alt="Award Logo 1" class="h-12" />
-              <img src="https://intcore-website-s3.s3.eu-central-1.amazonaws.com/images/awards/img_3.webp"
-                alt="Award Logo 2" class="h-12" />
-              <img src="https://intcore-website-s3.s3.eu-central-1.amazonaws.com/images/awards/img_4.webp"
-                alt="Award Logo 3" class="h-12 hidden sm:block" />
-              <img src="https://intcore-website-s3.s3.eu-central-1.amazonaws.com/images/awards/img_5.webp"
-                alt="Award Logo 4" class="h-12 hidden md:block" />
+            <!-- Right Column (70% width on desktop) -->
+            <div class="w-full md:w-9/12">
+              <!-- This is our new scrolling container -->
+              <div class="scrolling-wrapper">
+                <!-- The track contains TWO sets of the logos for a seamless loop -->
+                <div class="scrolling-track">
+                  <!-- Set 1 -->
+                  <img src="https://intcore-website-s3.s3.eu-central-1.amazonaws.com/images/awards/img_4.webp"
+                    alt="Clutch Top Web Developers 2023" class="h-20 mx-8">
+                  <img src="https://intcore-website-s3.s3.eu-central-1.amazonaws.com/images/awards/img_3.webp"
+                    alt="Sortlist Top Rated Agency" class="h-14 mx-8">
+                  <img src="https://intcore-website-s3.s3.eu-central-1.amazonaws.com/images/awards/img_2.webp"
+                    alt="Clutch Top Company Egypt" class="h-20 mx-8">
+                  <img src="https://intcore-website-s3.s3.eu-central-1.amazonaws.com/images/awards/img_6.webp"
+                    alt="Sortlist Best in Class" class="h-14 mx-8">
+                  <img src="https://intcore-website-s3.s3.eu-central-1.amazonaws.com/images/awards/img_5.webp"
+                    alt="Clutch Top B2B Companies" class="h-20 mx-8">
+                  <!-- Set 2 (Duplicate) -->
+                  <img src="https://intcore-website-s3.s3.eu-central-1.amazonaws.com/images/awards/img_4.webp"
+                    alt="Clutch Top Web Developers 2023" class="h-20 mx-8">
+                  <img src="https://intcore-website-s3.s3.eu-central-1.amazonaws.com/images/awards/img_3.webp"
+                    alt="Sortlist Top Rated Agency" class="h-14 mx-8">
+                  <img src="https://intcore-website-s3.s3.eu-central-1.amazonaws.com/images/awards/img_2.webp"
+                    alt="Clutch Top Company Egypt" class="h-20 mx-8">
+                  <img src="https://intcore-website-s3.s3.eu-central-1.amazonaws.com/images/awards/img_6.webp"
+                    alt="Sortlist Best in Class" class="h-14 mx-8">
+                  <img src="https://intcore-website-s3.s3.eu-central-1.amazonaws.com/images/awards/img_5.webp"
+                    alt="Clutch Top B2B Companies" class="h-20 mx-8">
+                </div>
+              </div>
             </div>
+
           </div>
         </div>
       </div>
     </section>
 
+
+
     <!-- Services Section -->
 
-    <section id="services" class="bg-service-background text-gray-800 py-24 rounded-t-3xl">
+    <section id="services" class="bg-service-background text-gray-800 py-24 rounded-t-3xl ">
       <div class="container mx-auto px-20">
         <!-- Section Header -->
 
@@ -340,7 +381,7 @@
         <div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <!-- Main Card Component -->
           <a href="#"
-            class="group block bg-white rounded-2xl p-8 text-center border border-gray-200 shadow-sm hover:bg-accent hover:shadow-xl hover:scale-105 transition-all duration-300 ease-in-out">
+            class="animate-card group block bg-white rounded-2xl p-8 text-center border border-gray-200 shadow-sm hover:bg-accent hover:shadow-xl hover:scale-105 point transition-all duration-300 ease-in-out">
             <div class="flex justify-center">
               <img src="https://intcore-website-s3.s3.eu-central-1.amazonaws.com/images/services/icon1.svg" class="h-16"
                 alt="UI/UX Icon" />
@@ -357,7 +398,7 @@
 
           <!-- Card 2 -->
           <a href="#"
-            class="group block bg-white rounded-2xl p-8 text-center border border-gray-200 shadow-sm hover:bg-accent hover:shadow-xl hover:scale-105 transition-all duration-300 ease-in-out">
+            class="animate-card group block bg-white rounded-2xl p-8 text-center border border-gray-200 shadow-sm hover:bg-accent hover:shadow-xl hover:scale-105 transition-all duration-300 ease-in-out">
             <div class="flex justify-center">
               <img src="https://intcore-website-s3.s3.eu-central-1.amazonaws.com/images/services/icon2.svg" class="h-16"
                 alt="Mobile App Icon" />
@@ -375,7 +416,7 @@
 
           <!-- Card 3 -->
           <a href="#"
-            class="group block bg-white rounded-2xl p-8 text-center border border-gray-200 shadow-sm hover:bg-accent hover:shadow-xl hover:scale-105 transition-all duration-300 ease-in-out">
+            class="animate-card group block bg-white rounded-2xl p-8 text-center border border-gray-200 shadow-sm hover:bg-accent hover:shadow-xl hover:scale-105 transition-all duration-300 ease-in-out">
             <div class="flex justify-center">
               <img src="https://intcore-website-s3.s3.eu-central-1.amazonaws.com/images/services/icon3.svg" class="h-16"
                 alt="Web App Icon" />
@@ -392,7 +433,7 @@
 
           <!-- Card 4 -->
           <a href="#"
-            class="group block bg-white rounded-2xl p-8 text-center border border-gray-200 shadow-sm hover:bg-accent hover:shadow-xl hover:scale-105 transition-all duration-300 ease-in-out">
+            class="animate-card group block bg-white rounded-2xl p-8 text-center border border-gray-200 shadow-sm hover:bg-accent hover:shadow-xl hover:scale-105 transition-all duration-300 ease-in-out">
             <div class="flex justify-center">
               <img src="https://intcore-website-s3.s3.eu-central-1.amazonaws.com/images/services/icon4.svg" class="h-16"
                 alt="Digital Marketing Icon" />
@@ -409,7 +450,7 @@
 
           <!-- Card 5 -->
           <a href="#"
-            class="group block bg-white rounded-2xl p-8 text-center border border-gray-200 shadow-sm hover:bg-accent hover:shadow-xl hover:scale-105 transition-all duration-300 ease-in-out">
+            class="animate-card group block bg-white rounded-2xl p-8 text-center border border-gray-200 shadow-sm hover:bg-accent hover:shadow-xl hover:scale-105 transition-all duration-300 ease-in-out">
             <div class="flex justify-center">
               <img src="https://intcore-website-s3.s3.eu-central-1.amazonaws.com/images/services/icon5.svg" class="h-16"
                 alt="DevOps Icon" />
@@ -426,7 +467,7 @@
 
           <!-- Card 6 -->
           <a href="#"
-            class="group block bg-white rounded-2xl p-8 text-center border border-gray-200 shadow-sm hover:bg-accent hover:shadow-xl hover:scale-105 transition-all duration-300 ease-in-out">
+            class="animate-card group block bg-white rounded-2xl p-8 text-center border border-gray-200 shadow-sm hover:bg-accent hover:shadow-xl hover:scale-105 transition-all duration-300 ease-in-out">
             <div class="flex justify-center">
               <img src="https://intcore-website-s3.s3.eu-central-1.amazonaws.com/images/services/icon6.svg" class="h-16"
                 alt="Hosting Icon" />
@@ -446,7 +487,7 @@
 
     <!-- Trusted By Section -->
 
-    <section id="clients" class="bg-trusted-background py-24">
+    <section id="clients" class="bg-neutral-100 py-24">
       <div class="container mx-auto px-4">
         <div class="max-w-2xl mb-12">
           <h5 class="text-gray-900 font-semibold text-4xl">
@@ -463,125 +504,125 @@
         <div class="mt-16 grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-8 items-center">
           <!-- Client Card -->
           <div
-            class="bg-gray-200 p-6 rounded-2xl flex justify-center items-center h-24 opacity-100 hover:shadow-xl hover:scale-105 transition-all duration-300 ease-in-out">
-            <img src="/images/LG.svg" class="max-h-12 w-auto" alt="LG Logo" />
+            class="animate-card bg-white p-6 rounded-2xl shadow-xl flex justify-center items-center h-36 opacity-100 hover:shadow-xl hover:scale-110 transition-all duration-300 ease-in-out">
+            <img src="/src/assets/images/LG.svg" class="max-h-20 w-auto" alt="LG Logo" />
           </div>
 
           <div
-            class="bg-gray-200 p-6 rounded-2xl flex justify-center items-center h-24 opacity-100 hover:shadow-xl hover:scale-105 transition-all duration-300 ease-in-out">
-            <img src="/images/UAE Edu.svg" class="max-h-12 w-auto"
+            class="animate-card bg-white p-6 rounded-2xl shadow-xl flex justify-center items-center h-36 opacity-100 hover:shadow-xl hover:scale-110 transition-all duration-300 ease-in-out">
+            <img src="/src/assets/images/UAE Edu.svg" class="max-h-20 w-auto"
               alt="United Arab Emirates Ministry Of Education Logo" />
           </div>
 
           <div
-            class="bg-gray-200 p-6 rounded-2xl flex justify-center items-center h-24 opacity-100 hover:shadow-xl hover:scale-105 transition-all duration-300 ease-in-out">
-            <img src="/images/Ministry Of Health.svg" class="max-h-12 w-auto" alt="Ministry Of Health Logo" />
+            class="animate-card bg-white p-6 rounded-2xl shadow-xl flex justify-center items-center h-36 opacity-100 hover:shadow-xl hover:scale-110 transition-all duration-300 ease-in-out">
+            <img src="/src/assets/images/Ministry Of Health.svg" class="max-h-20 w-auto" alt="Ministry Of Health Logo" />
           </div>
 
           <div
-            class="bg-gray-200 p-6 rounded-2xl flex justify-center items-center h-24 opacity-100 hover:shadow-xl hover:scale-105 transition-all duration-300 ease-in-out">
-            <img src="/images/FABMisr.svg" class="max-h-12 w-auto" alt="Fab Misr Logo" />
+            class="animate-card bg-white p-6 rounded-2xl shadow-xl flex justify-center items-center h-36 opacity-100 hover:shadow-xl hover:scale-110 transition-all duration-300 ease-in-out">
+            <img src="/src/assets/images/FABMisr.svg" class="max-h-20 w-auto" alt="Fab Misr Logo" />
           </div>
 
           <div
-            class="bg-gray-200 p-6 rounded-2xl flex justify-center items-center h-24 opacity-100 hover:shadow-xl hover:scale-105 transition-all duration-300 ease-in-out">
-            <img src="/images/Bank Audi.svg" class="max-h-12 w-auto" alt="Bank Audi Logo" />
+            class="animate-card bg-white p-6 rounded-2xl shadow-xl flex justify-center items-center h-36 opacity-100 hover:shadow-xl hover:scale-110 transition-all duration-300 ease-in-out">
+            <img src="/src/assets/images/Bank Audi.svg" class="max-h-20 w-auto" alt="Bank Audi Logo" />
           </div>
 
           <div
-            class="bg-gray-200 p-6 rounded-2xl flex justify-center items-center h-24 opacity-100 hover:shadow-xl hover:scale-105 transition-all duration-300 ease-in-out">
-            <img src="/images/EFGHermes.svg" class="max-h-12 w-auto" alt="EFG Hermes Logo" />
+            class="animate-card bg-white p-6 rounded-2xl shadow-xl flex justify-center items-center h-36 opacity-100 hover:shadow-xl hover:scale-110 transition-all duration-300 ease-in-out">
+            <img src="/src/assets/images/EFGHermes.svg" class="max-h-20 w-auto" alt="EFG Hermes Logo" />
           </div>
 
           <div
-            class="bg-gray-200 p-6 rounded-2xl flex justify-center items-center h-24 opacity-100 hover:shadow-xl hover:scale-105 transition-all duration-300 ease-in-out">
-            <img src="/images/ITT.svg" class="max-h-12 w-auto" alt="ITT Logo" />
+            class="animate-card bg-white p-6 rounded-2xl shadow-xl flex justify-center items-center h-36 opacity-100 hover:shadow-xl hover:scale-110 transition-all duration-300 ease-in-out">
+            <img src="/src/assets/images/ITT.svg" class="max-h-20 w-auto" alt="ITT Logo" />
           </div>
 
           <div
-            class="bg-gray-200 p-6 rounded-2xl flex justify-center items-center h-24 opacity-100 hover:shadow-xl hover:scale-105 transition-all duration-300 ease-in-out">
-            <img src="/images/Neyaba 3ama.svg" class="max-h-12 w-auto" alt="Neyaba 3ama Logo" />
+            class="animate-card bg-white p-6 rounded-2xl shadow-xl flex justify-center items-center h-36 opacity-100 hover:shadow-xl hover:scale-110 transition-all duration-300 ease-in-out">
+            <img src="/src/assets/images/Neyaba 3ama.svg" class="max-h-20 w-auto" alt="Neyaba 3ama Logo" />
           </div>
 
           <div
-            class="bg-gray-200 p-6 rounded-2xl flex justify-center items-center h-24 opacity-100 hover:shadow-xl hover:scale-105 transition-all duration-300 ease-in-out">
-            <img src="/images/AlNaem.svg" class="max-h-12 w-auto" alt="Alneam  Logo" />
+            class="animate-card bg-white p-6 rounded-2xl shadow-xl flex justify-center items-center h-36 opacity-100 hover:shadow-xl hover:scale-110 transition-all duration-300 ease-in-out">
+            <img src="/src/assets/images/AlNaem.svg" class="max-h-20 w-auto" alt="Alneam  Logo" />
           </div>
 
           <div
-            class="bg-gray-200 p-6 rounded-2xl flex justify-center items-center h-24 opacity-100 hover:shadow-xl hover:scale-105 transition-all duration-300 ease-in-out">
-            <img src="/images/EC Council.svg" class="max-h-12 w-auto" alt="EC Council Logo" />
+            class="animate-card bg-white p-6 rounded-2xl shadow-xl flex justify-center items-center h-36 opacity-100 hover:shadow-xl hover:scale-110 transition-all duration-300 ease-in-out">
+            <img src="/src/assets/images/EC Council.svg" class="max-h-20 w-auto" alt="EC Council Logo" />
           </div>
 
           <div
-            class="bg-gray-200 p-6 rounded-2xl flex justify-center items-center h-24 opacity-100 hover:shadow-xl hover:scale-105 transition-all duration-300 ease-in-out">
-            <img src="/images/Asus.svg" class="max-h-12 w-auto" alt="Asus Logo" />
+            class="animate-card bg-white p-6 rounded-2xl shadow-xl flex justify-center items-center h-36 opacity-100 hover:shadow-xl hover:scale-110 transition-all duration-300 ease-in-out">
+            <img src="/src/assets/images/Asus.svg" class="max-h-20 w-auto" alt="Asus Logo" />
           </div>
 
           <div
-            class="bg-gray-200 p-6 rounded-2xl flex justify-center items-center h-24 opacity-100 hover:shadow-xl hover:scale-105 transition-all duration-300 ease-in-out">
-            <img src="/images/Lacoste.svg" class="max-h-12 w-auto" alt="Lacoste Logo" />
+            class="animate-card bg-white p-6 rounded-2xl shadow-xl flex justify-center items-center h-36 opacity-100 hover:shadow-xl hover:scale-110 transition-all duration-300 ease-in-out">
+            <img src="/src/assets/images/Lacoste.svg" class="max-h-20 w-auto" alt="Lacoste Logo" />
           </div>
 
           <div
-            class="bg-gray-200 p-6 rounded-2xl flex justify-center items-center h-24 opacity-100 hover:shadow-xl hover:scale-105 transition-all duration-300 ease-in-out">
-            <img src="/images/My Tutor Lab.svg" class="max-h-12 w-auto" alt="My Tutor Lab Logo" />
+            class="animate-card bg-white p-6 rounded-2xl shadow-xl flex justify-center items-center h-36 opacity-100 hover:shadow-xl hover:scale-110 transition-all duration-300 ease-in-out">
+            <img src="/src/assets/images/My Tutor Lab.svg" class="max-h-20 w-auto" alt="My Tutor Lab Logo" />
           </div>
 
           <div
-            class="bg-gray-200 p-6 rounded-2xl flex justify-center items-center h-24 opacity-100 hover:shadow-xl hover:scale-105 transition-all duration-300 ease-in-out">
-            <img src="/images/Alahly.svg" class="max-h-12 w-auto" alt="Alahly Logo" />
+            class="animate-card bg-white p-6 rounded-2xl shadow-xl flex justify-center items-center h-36 opacity-100 hover:shadow-xl hover:scale-110 transition-all duration-300 ease-in-out">
+            <img src="/src/assets/images/Alahly.svg" class="max-h-20 w-auto" alt="Alahly Logo" />
           </div>
 
           <div
-            class="bg-gray-200 p-6 rounded-2xl flex justify-center items-center h-24 opacity-100 hover:shadow-xl hover:scale-105 transition-all duration-300 ease-in-out">
-            <img src="/images/Turkey Campus.svg" class="max-h-12 w-auto" alt="Turkey Campus Logo" />
+            class="animate-card bg-white p-6 rounded-2xl shadow-xl flex justify-center items-center h-36 opacity-100 hover:shadow-xl hover:scale-110 transition-all duration-300 ease-in-out">
+            <img src="/src/assets/images/Turkey Campus.svg" class="max-h-20 w-auto" alt="Turkey Campus Logo" />
           </div>
 
           <div
-            class="bg-gray-200 p-6 rounded-2xl flex justify-center items-center h-24 opacity-100 hover:shadow-xl hover:scale-105 transition-all duration-300 ease-in-out">
-            <img src="/images/Mountain View.svg" class="max-h-12 w-auto" alt="Mountain View Logo" />
+            class="animate-card bg-white p-6 rounded-2xl shadow-xl flex justify-center items-center h-36 opacity-100 hover:shadow-xl hover:scale-110 transition-all duration-300 ease-in-out">
+            <img src="/src/assets/images/Mountain View.svg" class="max-h-20 w-auto" alt="Mountain View Logo" />
           </div>
 
           <div
-            class="bg-gray-200 p-6 rounded-2xl flex justify-center items-center h-24 opacity-100 hover:shadow-xl hover:scale-105 transition-all duration-300 ease-in-out">
-            <img src="/images/SODIC.svg" class="max-h-12 w-auto" alt="Sodic Logo" />
+            class="animate-card bg-white p-6 rounded-2xl shadow-xl flex justify-center items-center h-36 opacity-100 hover:shadow-xl hover:scale-110 transition-all duration-300 ease-in-out">
+            <img src="/src/assets/images/SODIC.svg" class="max-h-20 w-auto" alt="Sodic Logo" />
           </div>
 
           <div
-            class="bg-gray-200 p-6 rounded-2xl flex justify-center items-center h-24 opacity-100 hover:shadow-xl hover:scale-105 transition-all duration-300 ease-in-out">
-            <img src="/images/Aldar.svg" class="max-h-12 w-auto" alt="Aldar Logo" />
+            class="animate-card bg-white p-6 rounded-2xl shadow-xl flex justify-center items-center h-36 opacity-100 hover:shadow-xl hover:scale-110 transition-all duration-300 ease-in-out">
+            <img src="/src/assets/images/Aldar.svg" class="max-h-20 w-auto" alt="Aldar Logo" />
           </div>
 
           <div
-            class="bg-gray-200 p-6 rounded-2xl flex justify-center items-center h-24 opacity-100 hover:shadow-xl hover:scale-105 transition-all duration-300 ease-in-out">
-            <img src="/images/TECNO.svg" class="max-h-12 w-auto" alt="Tecno Mobile Logo" />
+            class="animate-card bg-white p-6 rounded-2xl shadow-xl flex justify-center items-center h-36 opacity-100 hover:shadow-xl hover:scale-110 transition-all duration-300 ease-in-out">
+            <img src="/src/assets/images/TECNO.svg" class="max-h-20 w-auto" alt="Tecno Mobile Logo" />
           </div>
 
           <div
-            class="bg-gray-200 p-6 rounded-2xl flex justify-center items-center h-24 opacity-100 hover:shadow-xl hover:scale-105 transition-all duration-300 ease-in-out">
-            <img src="/images/Wateen.svg" class="max-h-12 w-auto" alt="Wateen Logo" />
+            class="animate-card bg-white p-6 rounded-2xl shadow-xl flex justify-center items-center h-36 opacity-100 hover:shadow-xl hover:scale-110 transition-all duration-300 ease-in-out">
+            <img src="/src/assets/images/Wateen.svg" class="max-h-20 w-auto" alt="Wateen Logo" />
           </div>
 
           <div
-            class="bg-gray-200 p-6 rounded-2xl flex justify-center items-center h-24 opacity-100 hover:shadow-xl hover:scale-105 transition-all duration-300 ease-in-out">
-            <img src="/images/Halla.svg" class="max-h-12 w-auto" alt="Halla Logo" />
+            class="animate-card bg-white p-6 rounded-2xl shadow-xl flex justify-center items-center h-36 opacity-100 hover:shadow-xl hover:scale-110 transition-all duration-300 ease-in-out">
+            <img src="/src/assets/images/Halla.svg" class="max-h-20 w-auto" alt="Halla Logo" />
           </div>
 
           <div
-            class="bg-gray-200 p-6 rounded-2xl flex justify-center items-center h-24 opacity-100 hover:shadow-xl hover:scale-105 transition-all duration-300 ease-in-out">
-            <img src="/images/Commerce Egypt.svg" class="max-h-12 w-auto"
+            class="animate-card bg-white p-6 rounded-2xl shadow-xl flex justify-center items-center h-36 opacity-100 hover:shadow-xl hover:scale-110 transition-all duration-300 ease-in-out">
+            <img src="/src/assets/images/Commerce Egypt.svg" class="max-h-20 w-auto"
               alt="Ameican Chamber Of Commerce In Egypt Logo" />
           </div>
 
           <div
-            class="bg-gray-200 p-6 rounded-2xl flex justify-center items-center h-24 opacity-100 hover:shadow-xl hover:scale-105 transition-all duration-300 ease-in-out">
-            <img src="/images/Click Cash.svg" class="max-h-12 w-auto" alt="Click Cash Logo" />
+            class="animate-card bg-white p-6 rounded-2xl shadow-xl flex justify-center items-center h-36 opacity-100 hover:shadow-xl hover:scale-110 transition-all duration-300 ease-in-out">
+            <img src="/src/assets/images/Click Cash.svg" class="max-h-20 w-auto" alt="Click Cash Logo" />
           </div>
 
           <div
-            class="bg-gray-200 p-6 rounded-2xl flex justify-center items-center h-24 opacity-100 hover:shadow-xl hover:scale-105 transition-all duration-300 ease-in-out">
-            <img src="/images/AlahlyMomken.svg" class="max-h-12 w-auto" alt="Alahly Momkne Logo" />
+            class="animate-card bg-white p-6 rounded-2xl shadow-xl flex justify-center items-center h-36 opacity-100 hover:shadow-xl hover:scale-110 transition-all duration-300 ease-in-out">
+            <img src="/src/assets/images/AlahlyMomken.svg" class="max-h-20 w-auto" alt="Alahly Momkne Logo" />
           </div>
         </div>
 
@@ -594,14 +635,14 @@
 
             <div class="flex items-center gap-x-4">
               <!-- Download Profile Button -->
-              <a href="#"
-                class="inline-flex text-xl items-center gap-x-3 text-accent font-semibold py-3 px-6 rounded-full bg-white hover:bg-gray-200 transition-colors duration-300">
+              <a href="/src/assets/documents/company_profile_updated.pdf" download="Intcore-Company-Profile.pdf"
+                class="btn-animated inline-flex text-xl items-center gap-x-3 text-accent font-semibold py-3 px-6 rounded-full bg-white hover:bg-gray-200 transition-colors duration-300">
                 <i class="fas fa-file-pdf text-xl"></i>
                 <span>Download Profile</span>
               </a>
               <!-- Request Meeting Button -->
-              <a href="#"
-                class="inline-flex text-xl items-center gap-x-3 text-white font-semibold py-3 px-6 rounded-full bg-accent hover:opacity-90 transition-opacity duration-300">
+              <a href="#" data-modal-target="#meeting-modal"
+                class="btn-animated inline-flex text-xl items-center gap-x-3 text-white font-semibold py-3 px-6 rounded-full bg-accent hover:opacity-90 transition-opacity duration-300">
                 <i class="fas fa-calendar-check text-xl"></i>
                 <span>Request Meeting</span>
               </a>
@@ -791,14 +832,14 @@
               <div class="relative">
                 <i class="fas fa-user absolute top-1/2 left-5 -translate-y-1/2 text-secondary text-lg"></i>
                 <input type="text" placeholder="What is your name?"
-                  class="w-full bg-gray-100 rounded-full p-4 pl-14 border border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/50 focus:outline-none transition-all duration-300">
+                  class="w-full text-gray-800 bg-gray-100 rounded-full p-4 pl-14 border border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/50 focus:outline-none transition-all duration-300">
               </div>
 
               <!-- Email Input -->
               <div class="relative">
                 <i class="fas fa-at absolute top-1/2 left-5 -translate-y-1/2 text-secondary text-lg"></i>
                 <input type="email" placeholder="Let’s have your professional email"
-                  class="w-full bg-gray-100 rounded-full p-4 pl-14 border border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/50 focus:outline-none transition-all duration-300">
+                  class="w-full text-gray-800 bg-gray-100 rounded-full p-4 pl-14 border border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/50 focus:outline-none transition-all duration-300">
               </div>
 
               <!-- Phone & Budget Row -->
@@ -830,12 +871,12 @@
               <!-- Message Textarea -->
               <div class="relative">
                 <textarea placeholder="Like to tell us about your business?" rows="5"
-                  class="w-full bg-gray-100 rounded-3xl p-4 pt-4 pl-6 border border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/50 focus:outline-none transition-all duration-300"></textarea>
+                  class="w-full text-gray-800 bg-gray-100 rounded-3xl p-4 pt-4 pl-6 border border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/50 focus:outline-none transition-all duration-300"></textarea>
               </div>
 
               <!-- Submit Button -->
               <button type="submit"
-                class="w-full text-white font-bold py-4 px-8 rounded-full bg-accent hover:opacity-90 transition text-lg flex items-center justify-center gap-x-3">
+                class="w-full text-white font-bold py-4 px-8 rounded-full bg-accent hover:opacity-90 btn-animated text-lg flex items-center justify-center gap-x-3">
                 <i class="fas fa-comment-dots"></i>
                 <span>Let's Talk</span>
               </button>
@@ -930,7 +971,7 @@
 
         <!-- Column 1: About & Socials -->
         <div class="lg:col-span-1">
-          <img src="/images/34_logo.svg" alt="Intcore Logo" class="h-30 mb-4">
+          <img src="/src/assets/images/34_logo.svg" alt="Intcore Logo" class="h-30 mb-4">
           <p class="text-xl text-white mb-6">
             Intcore offers the “best digital services” for mobile app, web apps development, hosting, DevOps services
             and performance marketing.
@@ -966,7 +1007,7 @@
             class="pt-0 py-4" alt="underline">
           <ul class="space-y-3">
             <li><a href="#" class="text-white hover:text-accent transition-colors">Home</a></li>
-            <li><a href="#" class="text-white hover:text-accent transition-colors">About us</a></li>
+            <li><a href="about.html" class="text-white hover:text-accent transition-colors">About us</a></li>
             <li><a href="#" class="text-white hover:text-accent transition-colors">Careers</a></li>
             <li><a href="#" class="text-white hover:text-accent transition-colors">Blog & News</a></li>
             <li><a href="#" class="text-white hover:text-accent transition-colors">Case studies</a></li>
@@ -1015,8 +1056,99 @@
     </div>
   </footer>
 
+  <!-- GET QUOTATION MODAL -->
 
-  <script type="module" src="/js/main.js"></script>
+  <div id="quotation-modal"
+    class="fixed inset-0 bg-black/60 z-50 hidden items-center justify-center transition-opacity duration-300">
+    <div class="bg-white rounded-3xl p-8 shadow-2xl w-full max-w-lg relative">
+      <!-- Modal Header -->
+      <div class="flex justify-between items-center mb-6">
+        <h3 class="text-2xl font-bold text-gray-900">Get quotation</h3>
+        <!-- We add a common class for all close buttons -->
+        <button class="modal-close-btn text-gray-400 hover:text-gray-800 transition-colors">
+          <i class="fas fa-times text-2xl"></i>
+        </button>
+      </div>
+
+      <!-- Modal Form (Same as the other modal) -->
+      <form class="space-y-5">
+        <div class="relative">
+          <i class="fas fa-user absolute top-1/2 left-5 -translate-y-1/2 text-secondary text-lg"></i>
+          <input type="text" placeholder="What is your name?"
+            class="w-full bg-gray-100 rounded-full p-4 pl-14 border border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/50 focus:outline-none transition-all duration-300 text-gray-800">
+        </div>
+        <div class="relative">
+          <i class="fas fa-at absolute top-1/2 left-5 -translate-y-1/2 text-secondary text-lg"></i>
+          <input type="email" placeholder="Let’s have your professional email"
+            class="w-full bg-gray-100 rounded-full p-4 pl-14 border border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/50 focus:outline-none transition-all duration-300 text-gray-800">
+        </div>
+        <div class="relative">
+          <i class="fas fa-mobile-alt absolute top-1/2 left-5 -translate-y-1/2 text-secondary text-lg"></i>
+          <input type="tel" placeholder="What about your Mobile?"
+            class="w-full bg-gray-100 rounded-full p-4 pl-14 border border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/50 focus:outline-none transition-all duration-300 text-gray-800">
+        </div>
+        <div class="relative">
+          <textarea placeholder="Like to tell us about your business?" rows="4"
+            class="w-full bg-gray-100 rounded-2xl p-4 pl-6 border border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/50 focus:outline-none transition-all duration-300 text-gray-800"></textarea>
+        </div>
+        <button type="submit"
+          class="btn-animated w-full text-white font-bold py-4 px-8 rounded-full bg-accent hover:opacity-90 text-lg flex items-center justify-center gap-x-3">
+          <i class="fas fa-comment-dots"></i>
+          <span>Let's Talk</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+
+  <!-- REQUEST A MEETING MODAL -->
+
+  <div id="meeting-modal"
+    class="fixed inset-0 bg-black/60 z-50 hidden items-center justify-center transition-opacity duration-300">
+    <div class="bg-white rounded-3xl p-8 shadow-2xl w-full max-w-lg relative">
+      <!-- Modal Header -->
+      <div class="flex justify-between items-center mb-6">
+        <h3 class="text-2xl font-bold text-gray-900">Request a Meeting</h3>
+        <!-- We add a common class for all close buttons -->
+        <button class="modal-close-btn text-gray-400 hover:text-gray-800 transition-colors">
+          <i class="fas fa-times text-2xl"></i>
+        </button>
+      </div>
+
+      <!-- Modal Form (Same as the other modal) -->
+      <form class="space-y-5">
+        <div class="relative">
+          <i class="fas fa-user absolute top-1/2 left-5 -translate-y-1/2 text-secondary text-lg"></i>
+          <input type="text" placeholder="What is your name?"
+            class="w-full bg-gray-100 rounded-full p-4 pl-14 border border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/50 focus:outline-none transition-all duration-300 text-gray-800">
+        </div>
+        <div class="relative">
+          <i class="fas fa-at absolute top-1/2 left-5 -translate-y-1/2 text-secondary text-lg"></i>
+          <input type="email" placeholder="Let’s have your professional email"
+            class="w-full bg-gray-100 rounded-full p-4 pl-14 border border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/50 focus:outline-none transition-all duration-300 text-gray-800">
+        </div>
+        <div class="relative">
+          <i class="fas fa-mobile-alt absolute top-1/2 left-5 -translate-y-1/2 text-secondary text-lg"></i>
+          <input type="tel" placeholder="What about your Mobile?"
+            class="w-full bg-gray-100 rounded-full p-4 pl-14 border border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/50 focus:outline-none transition-all duration-300 text-gray-800">
+        </div>
+        <div class="relative">
+          <textarea placeholder="Like to tell us about your business?" rows="4"
+            class="w-full bg-gray-100 rounded-2xl p-4 pl-6 border border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/50 focus:outline-none transition-all duration-300 text-gray-800"></textarea>
+        </div>
+        <button type="submit"
+          class="btn-animated w-full text-white font-bold py-4 px-8 rounded-full bg-accent hover:opacity-90 text-lg flex items-center justify-center gap-x-3">
+          <i class="fas fa-comment-dots"></i>
+          <span>Let's Talk</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+
+
+
+  <script type="module" src="/src/js/main.js"></script>
 </body>
 
 </html>

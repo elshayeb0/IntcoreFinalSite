@@ -1,0 +1,264 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  @apply scroll-smooth;
+  font-size: 0.875rem; /* 14px */
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  @apply bg-page-background text-white;
+}
+
+.container {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+h1 {
+  @apply text-5xl lg:text-6xl font-extrabold leading-tight;
+}
+
+h2 {
+  @apply text-4xl md:text-5xl font-bold;
+}
+
+h3 {
+  @apply text-2xl font-bold;
+}
+
+h4 {
+  @apply text-xl font-bold;
+}
+
+h5 {
+  @apply text-lg font-semibold;
+}
+
+p {
+  @apply text-base text-black;
+}
+
+.highlight-underline {
+  @apply relative;
+}
+
+.highlight-underline::after {
+  content: "";
+  @apply absolute left-0 w-full bg-accent rounded-full;
+
+  height: 45%;
+  bottom: 10%;
+  z-index: -1;
+  opacity: 0.9;
+}
+
+.btn-animated {
+  @apply relative overflow-hidden transition-all duration-300;
+  z-index: 1;
+}
+
+.btn-animated::before {
+  content: "";
+  @apply absolute top-0 w-16 h-full bg-white/30;
+
+  left: -100%;
+
+  /* Skew it to create the angled look */
+  transform: skewX(-25deg);
+
+  /* Set the animation properties */
+  transition: left 0.7s ease-in-out;
+}
+
+/* On hover, move the shine across the button to the right */
+.btn-animated:hover::before {
+  left: 150%;
+}
+
+/* CUSTOM COMPONENT: CONTINUOUS SCROLLING LOGOS            */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.scrolling-wrapper {
+  @apply relative flex overflow-hidden;
+}
+
+.scrolling-track {
+  animation: scroll 60s linear infinite;
+  @apply flex-shrink-0 flex justify-around min-w-full;
+}
+
+#header.header-scrolled {
+  /* When the header has this class, its padding shrinks */
+  @apply py-4 shadow-lg bg-page-background;
+}
+
+/* When the header has the 'header-scrolled' class, the logo inside it shrinks */
+#header.header-scrolled #header-logo {
+  @apply h-10;
+}
+
+/* ON-SCROLL STAGGERED ANIMATION                           */
+/* 1. The initial, hidden state for any card we want to animate. */
+.animate-card {
+  opacity: 0;
+  transform: translateY(50px); /* Start 50px down from its final position */
+  transition: opacity 0.5s ease-out,
+    transform 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+/* 2. The final, visible state (when the .is-visible class is added by JS) */
+/* The cubic-bezier function is what creates the elegant "bounce-out" or "settle" effect. */
+.animate-card.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Navigation: modern responsive pill */
+.nav-pill {
+  @apply flex items-center bg-card rounded-full px-3 md:px-4 lg:px-6 py-2 md:py-2.5 shadow-lg max-w-5xl md:w-auto w-full mx-4 md:mx-8 overflow-x-auto;
+}
+
+.nav-link {
+  @apply text-white text-base md:text-lg px-4 lg:px-5 py-2 rounded-full whitespace-nowrap hover:bg-page-background transition-colors duration-300;
+}
+
+/* Adjust nav container to keep contact and phone inside margins */
+#header > .container {
+  @apply max-w-7xl mx-auto px-4 md:px-8;
+}
+
+/* Dropdown panel */
+.dropdown-panel {
+  @apply absolute top-full left-1/2 -translate-x-1/2 mt-3 w-64 bg-card rounded-lg shadow-lg p-2 opacity-0 pointer-events-none transition-opacity duration-300 ease-in-out;
+  z-index: 1000;
+}
+
+.nav-dropdown.open .dropdown-panel {
+  @apply opacity-100 pointer-events-auto;
+}
+
+.nav-dropdown.open .caret {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease-in-out;
+}
+
+/* ======================================================= */
+/* CUSTOM COMPONENT: CORE VALUES TIMELINE                  */
+/* ======================================================= */
+.value-item {
+    @apply relative pt-8 md:pt-0; /* Add padding for mobile */
+}
+
+.value-icon-wrapper {
+    @apply relative w-32 h-32 flex items-center justify-center my-6;
+}
+
+.value-icon {
+    @apply w-24 h-24 rounded-full bg-white border-2 border-gray-300 flex items-center justify-center p-4 z-10;
+}
+
+.value-icon img {
+    @apply h-12 w-12;
+}
+
+.value-text {
+    @apply px-4;
+}
+
+/* --- The Connecting Lines & Circles (Desktop Only) --- */
+@media (min-width: 768px) {
+    /* The outer gray semi-circle */
+    .value-icon-wrapper::before {
+        content: '';
+        @apply absolute w-full h-1/2 bg-transparent border-4 border-gray-200 rounded-t-full border-b-0;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 0;
+    }
+
+    /* The inner circle border */
+    .value-icon-wrapper::after {
+        content: '';
+        @apply absolute w-28 h-28 border-2 border-gray-300 rounded-full;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 5;
+    }
+
+    /* Style for items with text on the bottom */
+    .md\:flex-col-reverse .value-icon-wrapper::before {
+        @apply rounded-b-full rounded-t-none border-t-0 border-b-4;
+    }
+}
+
+/* ======================================================= */
+/* COMPONENT: COMPANY YEARLY TIMELINE                       */
+/* ======================================================= */
+
+.timeline .timeline-tabs {
+  @apply relative flex items-center gap-4 overflow-x-auto px-2 py-3;
+  scroll-behavior: smooth;
+}
+
+.timeline .timeline-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.timeline .timeline-tabs::before {
+  content: "";
+  @apply absolute left-4 right-4 bg-gray-200 rounded-full;
+  height: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 0;
+}
+
+.timeline .timeline-pill {
+  @apply relative z-10 inline-flex items-center justify-center px-5 py-2.5 rounded-full bg-white text-gray-800 border border-gray-200 shadow-md font-semibold whitespace-nowrap transition-colors duration-200;
+}
+
+.timeline .timeline-pill:hover {
+  @apply bg-gray-50;
+}
+
+.timeline .timeline-pill:focus-visible {
+  @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-transparent;
+}
+
+.timeline .timeline-pill.active,
+.timeline .timeline-pill[aria-selected="true"] {
+  @apply bg-accent text-white border-accent;
+}
+
+.timeline #timeline-panel .timeline-card {
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity .3s ease, transform .3s ease;
+}
+
+.timeline #timeline-panel .timeline-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.timeline .timeline-card-left {
+  @apply rounded-2xl;
+}
+
+.timeline .timeline-year-vertical {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  letter-spacing: 2px;
+  @apply mr-4 opacity-90;
+}
