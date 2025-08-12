@@ -1,7 +1,28 @@
 import "../css/style.css";
+import "../css/timeline.css"; // Import the timeline styles
 
 document.addEventListener("DOMContentLoaded", () => {
   console.log("Professional environment is live. Reusable scripts loaded.");
+  
+document.addEventListener("DOMContentLoaded", function() {
+  Timeline("#company-timeline .timeline", [
+    {
+      year: 2014,
+      title: "Startup Launch",
+      text: "Intcore began as a dream and evolved into a real business with a fresh approach. We started as a web development and video production company with a small team and limited budget, committed to delivering quality from day one."
+    },
+    {
+      year: 2015,
+      title: "Rapid Growth",
+      text: "Expanded our services to mobile app development, gained major clients, and tripled our revenue in under a year."
+    },
+    {
+      year: 2016,
+      title: "International Expansion",
+      text: "Opened our first overseas office and began serving clients in Europe and the Middle East."
+    }
+  ]);
+});
 
   // ON-SCROLL REPEATING ANIMATION SYSTEM
   const observer = new IntersectionObserver(
