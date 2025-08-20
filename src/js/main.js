@@ -1,5 +1,5 @@
 import "../css/style.css";
-import "../css/timeline.css"; // Import the timeline styles
+import "../css/timeline.css";
 
 document.addEventListener("DOMContentLoaded", () => {
   console.log("Professional environment is live. Reusable scripts loaded.");

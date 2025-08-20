@@ -3,8 +3,8 @@ export default {
   content: [
     "./index.html",
     "./about.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-    "./src/**/*.css"
+    "./e-commerce.html",
+    "./src/**/*.{js,ts,jsx,tsx,css,html}"
   ],
   theme: {
     extend: {
@@ -21,4 +21,4 @@ export default {
     },
   },
   plugins: [],
-};
+}

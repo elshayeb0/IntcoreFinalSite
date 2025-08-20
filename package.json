@@ -5,9 +5,12 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host",
-    "build": "vite build",
+    "tw:watch": "tailwindcss -c config/tailwind.config.js -i src/css/style.css -o public/style.css --watch",
+    "build:css": "tailwindcss -c config/tailwind.config.js -i src/css/style.css -o public/style.css --minify",
+    "build": "npm run build:css && vite build",
     "preview": "vite preview"
   },
+
   "devDependencies": {
     "autoprefixer": "^10.4.21",
     "postcss": "^8.5.6",
