@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>UI/UX Design | Intcore</title>
+        <meta name="description" content="UI/UX design services by Intcore: research, wireframes, prototypes, and pixel-perfect interfaces to elevate your brand and product experience.">
         <link rel="icon" type="image/x-icon" href="/src/assets/images/Intcore Logo.webp">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
         <link rel="stylesheet" href="/style.css">
@@ -129,7 +130,7 @@
                 </nav>
                 <!-- Phone Number -->
                 <div class="hidden md:flex items-center gap-x-6 flex-shrink-0">
-                    <a href="https://wa.me/971586651844" target="_blank" class="text-white font-semibold text-xl hover:text-accent transition-colors duration-300">
+                    <a href="https://wa.me/971586651844" target="_blank" rel="noopener noreferrer" class="text-white font-semibold text-xl hover:text-accent transition-colors duration-300">
                         +971 58 665 1844
                     </a>
                     <a href="#contact" class="text-white font-semibold py-3 px-6 rounded-full bg-accent text-xl hover:bg-white hover:text-accent transition-colors duration-300 uppercase">
@@ -145,7 +146,7 @@
             </div>
             <!-- Mobile Navigation Menu (Overlay) -->
             <div id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-page-background/95 backdrop-blur-sm pt-28 px-8 z-10">
-                <nav class="flex flex-col items-center text-center space-y-8 text-xl">
+                <nav class="flex flex-col items-center text-center space-y-8 text-xl" aria-label="Mobile">
                     <a href="#home" class="mobile-nav-link">Home</a>
                     <a href="#services" class="mobile-nav-link">Services</a>
                     <a href="#casestudies" class="mobile-nav-link">Case Studies</a>
@@ -378,13 +379,13 @@
                             <form class="space-y-5">
                                 <!-- Name Input -->
                                 <div class="relative">
-                                    <i class="fas fa-user absolute top-1/2 left-5 -translate-y-1/2 text-secondary text-lg"></i>
-                                    <input type="text" placeholder="What is your name?" class="w-full text-gray-800 bg-gray-100 rounded-full p-4 pl-14 border border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/50 focus:outline-none transition-all duration-300">
+                                    <i class="fas fa-user absolute top-1/2 left-5 -translate-y-1/2 text-secondary text-lg" aria-hidden="true"></i>
+                                    <input type="text" placeholder="What is your name?" aria-label="Your name" class="w-full text-gray-800 bg-gray-100 rounded-full p-4 pl-14 border border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/50 focus:outline-none transition-all duration-300">
                                 </div>
                                 <!-- Email Input -->
                                 <div class="relative">
-                                    <i class="fas fa-at absolute top-1/2 left-5 -translate-y-1/2 text-secondary text-lg"></i>
-                                    <input type="email" placeholder="Let’s have your professional email" class="w-full text-gray-800 bg-gray-100 rounded-full p-4 pl-14 border border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/50 focus:outline-none transition-all duration-300">
+                                    <i class="fas fa-at absolute top-1/2 left-5 -translate-y-1/2 text-secondary text-lg" aria-hidden="true"></i>
+                                    <input type="email" placeholder="Let’s have your professional email" aria-label="Your email" class="w-full text-gray-800 bg-gray-100 rounded-full p-4 pl-14 border border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/50 focus:outline-none transition-all duration-300">
                                 </div>
                                 <!-- Phone & Budget Row -->
                                 <div class="grid md:grid-cols-2 gap-5">
@@ -394,12 +395,12 @@
                                             <img src="https://flagcdn.com/w20/eg.png" alt="Egypt Flag" class="h-4">
                                             <span class="text-gray-500">+20</span>
                                         </div>
-                                        <input type="tel" class="w-full bg-transparent p-4 border-none focus:outline-none text-gray-800">
+                                        <input type="tel" aria-label="Your phone number" class="w-full bg-transparent p-4 border-none focus:outline-none text-gray-800">
                                     </div>
                                     <!-- Budget Select -->
                                     <div class="relative">
-                                        <i class="fas fa-dollar-sign absolute top-1/2 left-5 -translate-y-1/2 text-secondary text-lg"></i>
-                                        <select class="w-full bg-gray-100 rounded-full p-4 pl-14 border border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/50 focus:outline-none transition-all duration-300 appearance-none text-gray-500">
+                                        <i class="fas fa-dollar-sign absolute top-1/2 left-5 -translate-y-1/2 text-secondary text-lg" aria-hidden="true"></i>
+                                        <select aria-label="Budget" class="w-full bg-gray-100 rounded-full p-4 pl-14 border border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/50 focus:outline-none transition-all duration-300 appearance-none text-gray-500">
                                             <option>My budget is</option>
                                             <option>20,000-35,000 USD</option>
                                             <option>35,000-60,000 USD</option>
@@ -410,7 +411,7 @@
                                 </div>
                                 <!-- Message Textarea -->
                                 <div class="relative">
-                                    <textarea placeholder="Like to tell us about your business?" rows="5" class="w-full text-gray-800 bg-gray-100 rounded-3xl p-4 pt-4 pl-6 border border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/50 focus:outline-none transition-all duration-300"></textarea>
+                                    <textarea placeholder="Like to tell us about your business?" aria-label="Your message" rows="5" class="w-full text-gray-800 bg-gray-100 rounded-3xl p-4 pt-4 pl-6 border border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/50 focus:outline-none transition-all duration-300"></textarea>
                                 </div>
                                 <!-- Submit Button -->
                                 <button type="submit" class="w-full text-white font-bold py-4 px-8 rounded-full bg-accent hover:opacity-90 btn-animated text-lg flex items-center justify-center gap-x-3">
