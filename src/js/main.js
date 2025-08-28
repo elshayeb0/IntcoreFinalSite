@@ -154,6 +154,48 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
   // =======================================================
+  // MOBILE MENU TOGGLE
+  // =======================================================
+  const mobileMenuBtn = document.getElementById("mobile-menu-button");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const bodyEl = document.body;
+
+  if (mobileMenuBtn && mobileMenu) {
+    const toggleMobileMenu = () => {
+      const isHidden = mobileMenu.classList.contains("hidden");
+      if (isHidden) {
+        mobileMenu.classList.remove("hidden");
+        mobileMenu.classList.add("flex");
+        bodyEl.classList.add("overflow-hidden");
+      } else {
+        mobileMenu.classList.add("hidden");
+        mobileMenu.classList.remove("flex");
+        bodyEl.classList.remove("overflow-hidden");
+      }
+    };
+
+    mobileMenuBtn.addEventListener("click", toggleMobileMenu);
+
+    // Close when clicking any mobile nav link
+    mobileMenu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.add("hidden");
+        mobileMenu.classList.remove("flex");
+        bodyEl.classList.remove("overflow-hidden");
+      });
+    });
+
+    // Close on Escape
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        mobileMenu.classList.add("hidden");
+        mobileMenu.classList.remove("flex");
+        bodyEl.classList.remove("overflow-hidden");
+      }
+    });
+  }
+
+  // =======================================================
   // COMPONENT: COMPANY YEARLY TIMELINE (about.html)
   // =======================================================
   const timelineRoot = document.querySelector("#company-timeline .timeline");

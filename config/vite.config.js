@@ -10,15 +10,20 @@ export default defineConfig({
     emptyOutDir: true,
     rollupOptions: {
       input: {
-        main: resolve(__dirname, 'index.html'),
-        about: resolve(__dirname, 'about.html'),
-        ecommerce: resolve(__dirname, 'e-commerce.html'),
+        main: resolve(__dirname, '../index.html'),
+        about: resolve(__dirname, '../about.html'),
+        ecommerce: resolve(__dirname, '../e-commerce.html'),
+        mobile: resolve(__dirname, '../mobile.html'),
+        cms: resolve(__dirname, '../cms.html'),
+        design: resolve(__dirname, '../design.html'),
+        marketing: resolve(__dirname, '../marketing.html'),
+        reusable: resolve(__dirname, '../reusable.html'),
       }
     }
   },
 
    css: {
-    postcss: resolve(__dirname, 'config/postcss.config.js'),
+    postcss: resolve(__dirname, 'postcss.config.js'),
   },
 
   server: {
