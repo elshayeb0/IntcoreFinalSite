@@ -18,6 +18,14 @@ export default defineConfig({
         design: resolve(__dirname, '../design.html'),
         marketing: resolve(__dirname, '../marketing.html'),
         reusable: resolve(__dirname, '../reusable.html'),
+        webapp: resolve(__dirname, '../web-app.html'),
+        hosting: resolve(__dirname, '../hosting.html'),
+        devops: resolve(__dirname, '../devops.html'),
+        aichatbot: resolve(__dirname, '../ai-chatbot.html'),
+        aiautomation: resolve(__dirname, '../ai-automation.html'),
+        aistrategy: resolve(__dirname, '../ai-strategy.html'),
+        careers: resolve(__dirname, '../careers.html'),
+        casestudies: resolve(__dirname, '../case-studies.html'),
       }
     }
   },
