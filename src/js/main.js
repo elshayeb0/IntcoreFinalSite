@@ -311,4 +311,7 @@ document.addEventListener("DOMContentLoaded", function() {
     renderPills();
     renderPanel();
   }
+
+  
+  
 });
