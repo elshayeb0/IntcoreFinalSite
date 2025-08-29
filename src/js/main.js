@@ -137,6 +137,71 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // =======================================================
+  // SIMPLE ACCORDION (data-accordion)
+  // =======================================================
+  document.querySelectorAll('[data-accordion]').forEach((root) => {
+    // Ensure everything is closed by default on first load
+    const initTriggers = root.querySelectorAll('.accordion-trigger');
+    initTriggers.forEach((btn) => {
+      const panelId = btn.getAttribute('aria-controls');
+      const panel = panelId ? document.getElementById(panelId) : null;
+      btn.setAttribute('aria-expanded', 'false');
+      btn.classList.remove('bg-accent','text-white');
+      btn.classList.add('bg-white','text-gray-900');
+      btn.querySelector('.accordion-bullet')?.classList.remove('bg-white','ring-2','ring-white/40');
+      btn.querySelector('.accordion-bullet')?.classList.add('bg-gray-300');
+      btn.querySelector('.caret')?.classList.remove('rotate-180');
+      if (panel) {
+        panel.classList.add('accordion-panel','closed');
+        panel.classList.remove('open');
+      }
+    });
+
+    root.addEventListener('click', (e) => {
+      const btn = e.target.closest('.accordion-trigger');
+      if (!btn || !root.contains(btn)) return;
+      const panelId = btn.getAttribute('aria-controls');
+      const panel = panelId ? document.getElementById(panelId) : null;
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+
+      // Close all siblings (one-open behavior)
+      root.querySelectorAll('.accordion-trigger').forEach((otherBtn) => {
+        if (otherBtn === btn) return;
+        const otherPanelId = otherBtn.getAttribute('aria-controls');
+        const otherPanel = otherPanelId ? document.getElementById(otherPanelId) : null;
+        otherBtn.setAttribute('aria-expanded', 'false');
+        otherBtn.classList.remove('bg-accent','text-white');
+        otherBtn.classList.add('bg-white','text-gray-900');
+        otherBtn.querySelector('.accordion-bullet')?.classList.remove('bg-white','ring-2','ring-white/40');
+        otherBtn.querySelector('.accordion-bullet')?.classList.add('bg-gray-300');
+        otherBtn.querySelector('.caret')?.classList.remove('rotate-180');
+        if (otherPanel) {
+          otherPanel.classList.remove('open');
+          otherPanel.classList.add('closed');
+        }
+      });
+
+      // Toggle current
+      btn.setAttribute('aria-expanded', String(!expanded));
+      if (!expanded) {
+        btn.classList.add('bg-accent','text-white');
+        btn.classList.remove('bg-white','text-gray-900');
+        btn.querySelector('.accordion-bullet')?.classList.remove('bg-gray-300');
+        btn.querySelector('.accordion-bullet')?.classList.add('bg-white','ring-2','ring-white/40');
+        btn.querySelector('.caret')?.classList.add('rotate-180');
+        if (panel) { panel.classList.remove('closed'); panel.classList.add('open'); }
+      } else {
+        btn.classList.remove('bg-accent','text-white');
+        btn.classList.add('bg-white','text-gray-900');
+        btn.querySelector('.accordion-bullet')?.classList.remove('bg-white','ring-2','ring-white/40');
+        btn.querySelector('.accordion-bullet')?.classList.add('bg-gray-300');
+        btn.querySelector('.caret')?.classList.remove('rotate-180');
+        if (panel) { panel.classList.remove('open'); panel.classList.add('closed'); }
+      }
+    });
+  });
+
   // Timeline component logic lives in about.html via Glide (src/js/timeline.js).
 
   

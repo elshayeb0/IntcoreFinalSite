@@ -264,3 +264,12 @@ p {
   letter-spacing: 2px;
   @apply mr-4 opacity-90;
 }
+
+
+/* Accordion smooth open/close */
+.accordion-panel {
+  overflow: hidden;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+.accordion-panel.closed { max-height: 0; opacity: 0; }
+.accordion-panel.open { max-height: 1000px; opacity: 1; }
