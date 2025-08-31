@@ -204,7 +204,113 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Timeline component logic lives in about.html via Glide (src/js/timeline.js).
 
-  
-  
-  
+  // =======================================================
+  // TESTIMONIALS SLIDER (dependency-free) with fade + dots
+  // =======================================================
+  (function initTestimonials(){
+    const track = document.getElementById('ts-track');
+    if (!track) return;
+
+    const slides = Array.from(track.querySelectorAll('.testimonial-slide'));
+    const dotsWrap = document.getElementById('ts-dots');
+    const prevBtn = document.getElementById('ts-prev');
+    const nextBtn = document.getElementById('ts-next');
+    const viewport = track.parentElement; // .ts-viewport
+    let index = 0;
+    let autoTimer = null;
+
+    // Build dots
+    slides.forEach((_, i) => {
+      const b = document.createElement('button');
+      b.setAttribute('aria-label', `Go to review ${i + 1}`);
+      b.className = 'ts-dot w-3 h-3 rounded-full';
+      b.addEventListener('click', () => goTo(i));
+      dotsWrap.appendChild(b);
+    });
+
+    function update() {
+      // Update slide active state (for cross-fade)
+      slides.forEach((s, i) => s.classList.toggle('is-active', i === index));
+      // Update dots
+      Array.from(dotsWrap.children).forEach((b, i) => {
+        b.classList.toggle('is-active', i === index);
+        b.setAttribute('aria-current', i === index ? 'true' : 'false');
+      });
+      // Adjust viewport height to match active slide
+      if (viewport) {
+        const active = slides[index];
+        // Temporarily ensure active slide is visible to measure
+        const h = active.scrollHeight;
+        viewport.style.height = h + 'px';
+      }
+    }
+
+    function goTo(i) {
+      index = (i + slides.length) % slides.length;
+      update();
+    }
+
+    // Controls
+    prevBtn?.addEventListener('click', () => goTo(index - 1));
+    nextBtn?.addEventListener('click', () => goTo(index + 1));
+
+    // Keyboard navigation (global, avoids focus ring on container)
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') { e.preventDefault(); goTo(index - 1); }
+      if (e.key === 'ArrowRight') { e.preventDefault(); goTo(index + 1); }
+    });
+
+    // Auto-advance with hover pause
+    function startAuto(){ stopAuto(); autoTimer = setInterval(() => goTo(index + 1), 6000); }
+    function stopAuto(){ if (autoTimer) clearInterval(autoTimer); }
+    track.addEventListener('mouseenter', stopAuto);
+    track.addEventListener('mouseleave', startAuto);
+
+    // Touch / pointer swipe (mobile-friendly)
+    let startX = 0, startY = 0, isDown = false;
+    const SWIPE_THRESHOLD = 40; // px
+
+    const onPointerDown = (e) => {
+      isDown = true;
+      startX = e.clientX ?? (e.touches && e.touches[0]?.clientX) ?? 0;
+      startY = e.clientY ?? (e.touches && e.touches[0]?.clientY) ?? 0;
+    };
+    const onPointerMove = (e) => {
+      if (!isDown) return;
+      const x = e.clientX ?? (e.touches && e.touches[0]?.clientX) ?? 0;
+      const y = e.clientY ?? (e.touches && e.touches[0]?.clientY) ?? 0;
+      const dx = x - startX;
+      const dy = y - startY;
+      // Only act on mostly-horizontal swipes
+      if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > SWIPE_THRESHOLD) {
+        isDown = false;
+        if (dx < 0) { goTo(index + 1); } else { goTo(index - 1); }
+      }
+    };
+    const onPointerUp = () => { isDown = false; };
+
+    const target = viewport || track;
+    // Prefer Pointer Events; fallback to touch
+    if (window.PointerEvent) {
+      target.addEventListener('pointerdown', onPointerDown, { passive: true });
+      target.addEventListener('pointermove', onPointerMove, { passive: true });
+      target.addEventListener('pointerup', onPointerUp, { passive: true });
+      target.addEventListener('pointercancel', onPointerUp, { passive: true });
+      target.addEventListener('pointerleave', onPointerUp, { passive: true });
+    } else {
+      target.addEventListener('touchstart', onPointerDown, { passive: true });
+      target.addEventListener('touchmove', onPointerMove, { passive: true });
+      target.addEventListener('touchend', onPointerUp, { passive: true });
+      target.addEventListener('touchcancel', onPointerUp, { passive: true });
+    }
+
+    // Init
+    // Ensure first slide visible state and height
+    requestAnimationFrame(() => {
+      slides[0]?.classList.add('is-active');
+      update();
+      startAuto();
+    });
+  })();
+
 });

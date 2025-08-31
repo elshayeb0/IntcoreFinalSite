@@ -273,3 +273,68 @@ p {
 }
 .accordion-panel.closed { max-height: 0; opacity: 0; }
 .accordion-panel.open { max-height: 1000px; opacity: 1; }
+
+/* ======================================================= */
+/* COMPONENT: TESTIMONIALS SLIDER                          */
+/* ======================================================= */
+.ts-viewport { position: relative; }
+#ts-track { position: relative; }
+.testimonial-slide { position: absolute; inset: 0; opacity: 0; pointer-events: none; will-change: opacity; backface-visibility: hidden; transition: opacity .45s ease-in-out; }
+.testimonial-slide.is-active { opacity: 1; pointer-events: auto; }
+
+/* Smooth container height transition to avoid jumps */
+.ts-viewport { transition: height .35s ease; }
+/* Hint browser: vertical scroll is primary; allow horizontal swipes */
+.ts-viewport { touch-action: pan-y; }
+
+/* Ensure card corners are clipped perfectly */
+.testimonial-slide .bg-white.rounded-3xl { overflow: hidden; }
+
+/* Arrow placement and stacking */
+#ts-prev, #ts-next { top: 50%; transform: translateY(-50%); z-index: 20; }
+#ts-prev { left: 1rem; }
+#ts-next { right: 1rem; }
+
+/* Remove blue outline when container is focused accidentally */
+.ts-viewport:focus { outline: none !important; box-shadow: none !important; }
+
+/* Arrow styling (match hover/scale feel) */
+.ts-arrow {
+  background: #ffffff;
+  border: 2px solid var(--color-border-custom, #e5e7eb);
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+.ts-arrow i { color: var(--color-accent, #e97176); }
+.ts-arrow:hover {
+  transform: scale(1.1);
+  background: var(--color-accent, #e97176);
+  border-color: var(--color-accent, #e97176);
+}
+.ts-arrow:hover i { color: #ffffff; }
+
+/* Dots styling */
+#ts-dots .ts-dot {
+  width: 12px;
+  height: 12px;
+  background: #d1d5db; /* gray-300 */
+  border-radius: 9999px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+#ts-dots .ts-dot:hover { background: #9ca3af; transform: scale(1.1); }
+#ts-dots .ts-dot.is-active,
+#ts-dots .ts-dot[aria-current="true"] { background: var(--color-accent, #e97176); transform: scale(1.2); }
+
+/* Refine card look: softer shadow and cleaner border for crisp corners */
+#testimonials .customers-card,
+#testimonials .bg-white.rounded-3xl.shadow-2xl { box-shadow: 0 14px 30px rgba(0,0,0,.06) !important; border-color: rgba(229,231,235,.75) !important; overflow: clip; background-clip: padding-box; }
+
+/* Arrows half-in/half-out over card border. Keep in sync with px-14 (3.5rem) */
+#testimonials { --ts-gutter: 3.5rem; }
+#ts-next { right: calc(var(--ts-gutter) - 48px); }
+
+/* Mobile: push arrows fully out and slightly smaller */
+@media (max-width: 768px) {
+  #ts-next { right: -16px; }
+  .ts-arrow { width: 44px !important; height: 44px !important; }
+}
