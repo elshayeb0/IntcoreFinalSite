@@ -127,7 +127,7 @@ p {
 
 /* Navigation: modern responsive pill */
 .nav-pill {
-  @apply flex items-center bg-card rounded-full px-3 md:px-4 lg:px-6 py-2 md:py-2.5 shadow-lg max-w-5xl md:w-auto w-full mx-4 md:mx-8 overflow-x-auto;
+  @apply flex items-center bg-card rounded-full px-3 md:px-4 lg:px-6 py-2 md:py-2.5 shadow-lg max-w-5xl md:w-auto w-full mx-4 md:mx-8 overflow-visible;
 }
 
 .nav-link {
