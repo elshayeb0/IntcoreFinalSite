@@ -338,3 +338,22 @@ p {
   #ts-next { right: -16px; }
   .ts-arrow { width: 44px !important; height: 44px !important; }
 }
+
+/* === Promises full-screen spread animation === */
+#promises{ overflow: visible; }
+
+.promises-card{
+  transition: border-radius 600ms ease, padding 600ms ease,
+              margin 600ms ease, transform 600ms ease, min-height 600ms ease;
+}
+
+/* Full-bleed effect while still inside a container */
+.promises-card--fullscreen{
+  border-radius: 0 !important;
+  min-height: 100vh;
+  /* break out of container to viewport edges */
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding-left: clamp(1.5rem, 4vw, 4rem);
+  padding-right: clamp(1.5rem, 4vw, 4rem);
+}

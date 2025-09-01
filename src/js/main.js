@@ -313,4 +313,49 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   })();
 
+  // === Promises full-screen spread on scroll ===
+(() => {
+  const section = document.getElementById('promises');
+  const card = document.getElementById('promises-card');
+  if (!section || !card) return;
+
+  // Start expanded on first paint
+  card.classList.add('promises-card--fullscreen');
+
+  let lastY = window.scrollY;
+
+  const io = new IntersectionObserver(([entry]) => {
+    const ratio = entry.intersectionRatio;
+    const down = window.scrollY > lastY;
+    lastY = window.scrollY;
+
+    // Collapse when we actually enter the section while scrolling down
+    if (entry.isIntersecting && down && ratio > 0.35) {
+      card.classList.remove('promises-card--fullscreen');
+      return;
+    }
+    // Re-open when section is out of view and user scrolls up toward it
+    if (!entry.isIntersecting && !down) {
+      card.classList.add('promises-card--fullscreen');
+    }
+  }, { threshold: [0, 0.35, 0.6, 1] });
+
+  io.observe(section);
+
+  // Fallback for fast scroll
+  window.addEventListener('scroll', () => {
+    const r = section.getBoundingClientRect();
+    const vh = window.innerHeight || document.documentElement.clientHeight;
+    const down = window.scrollY > lastY;
+    lastY = window.scrollY;
+
+    if (r.top < vh * 0.4 && r.bottom > vh * 0.6 && down) {
+      card.classList.remove('promises-card--fullscreen');
+    }
+    if (r.top > vh && !down) {
+      card.classList.add('promises-card--fullscreen');
+    }
+  }, { passive: true });
+})();
+
 });
