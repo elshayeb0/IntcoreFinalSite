@@ -2,6 +2,7 @@ import { defineConfig } from 'vite'
 import { resolve } from 'path'
 
 export default defineConfig({
+  appType: 'mpa',
 
   root: '.',            // project root
   publicDir: 'public',  // if you have static assets
