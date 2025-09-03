@@ -41,6 +41,11 @@ p {
   @apply text-base text-black;
 }
 
+.award-logo {
+  @apply max-h-20 w-auto h-auto object-contain mx-8;
+  max-width: 120px; /* tweak per design */
+}
+
 .highlight-underline {
   @apply relative;
   /* Establish stacking context so ::after at z-[-1] stays behind text, not behind ancestors */
@@ -357,3 +362,14 @@ p {
   padding-left: clamp(1.5rem, 4vw, 4rem);
   padding-right: clamp(1.5rem, 4vw, 4rem);
 }
+
+/* ======================================================= */
+/* intl-tel-input integration                              */
+/* ======================================================= */
+.iti { width: 100%; }
+.iti input { width: 100%; }
+.iti__country-list { z-index: 10000; color: #111827; } /* ensure over modals, readable text */
+.iti--separate-dial-code .iti__selected-flag { background-color: transparent; }
+
+/* intl-tel-input self-host path for flag sprites */
+.iti { --iti-path: "/vendor/phone/img"; }

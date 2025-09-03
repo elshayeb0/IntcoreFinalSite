@@ -10,6 +10,10 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+        <!-- intl-tel-input (self-hosted) -->
+        
+        <script defer src="/vendor/phone/intlTelInput.min.js"></script>
+        <link rel="stylesheet" href="/vendor/phone/intlTelInput.css">
         <link rel="stylesheet" href="/style.css">
     </head>
     <body class="bg-page-background text-white">
@@ -25,7 +29,6 @@
                             class="h-12 transition-all duration-300"
                         >
                     </a>
-                    
                 </div>
                 <!-- Main Navigation Bar -->
                 <nav class="hidden md:flex flex-grow justify-center text-lg ">
@@ -133,8 +136,13 @@
                     </div>
                 </nav>
                 <!-- Phone Number -->
-                <div class="hidden md:flex items-center gap-x-6 flex-shrink-0"> 
-                    <a href="https://wa.me/971586651844" target="_blank" rel="noopener noreferrer" class="text-white font-semibold text-xl hover:text-accent transition-colors duration-300">
+                <div class="hidden md:flex items-center gap-x-6 flex-shrink-0">
+                    <a
+                        href="https://wa.me/971586651844"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="text-white font-semibold text-xl hover:text-accent transition-colors duration-300"
+                    >
                         +971 58 665 1844
                     </a>
                     <a href="#contact" class="text-white font-semibold py-3 px-6 rounded-full bg-accent text-xl hover:bg-white hover:text-accent transition-colors duration-300 uppercase">
@@ -151,10 +159,18 @@
             <!-- Mobile Navigation Menu (Overlay) -->
             <div id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-page-background/95 backdrop-blur-sm pt-28 px-8 z-10">
                 <nav class="flex flex-col items-center text-center space-y-8 text-xl">
-                    <a href="#home" class="mobile-nav-link">Home</a>
-                    <a href="#services" class="mobile-nav-link">Services</a>
+                    <a href="index.html" class="mobile-nav-link">Home</a>
+                    <a href="design.html" class="mobile-nav-link">Creative Design & UI/UX</a>
+                    <a href="marketing.html" class="mobile-nav-link">Digital Marketing</a>
+                    <a href="mobile.html" class="mobile-nav-link">Mobile App Development</a>
+                    <a href="web-app.html" class="mobile-nav-link">Web App Development</a>
+                    <a href="devops.html" class="mobile-nav-link">Technical Consultancy & DevOps</a>
+                    <a href="hosting.html" class="mobile-nav-link">Hosting & Servers</a>
+                    <a href="ai-chatbot.html" class="mobile-nav-link">AI Chatbot</a>
+                    <a href="ai-automation.html" class="mobile-nav-link">AI Automation</a>
+                    <a href="ai-strategy.html" class="mobile-nav-link">AI Strategy</a>
                     <a href="case-studies.html" class="mobile-nav-link">Case Studies</a>
-                    <a href="#blog" class="mobile-nav-link">Blog</a>
+                    <a href="blog.html" class="mobile-nav-link">Blog</a>
                     <div class="pt-8">
                         <a href="#contact" class="btn btn-accent uppercase">Contact Us</a>
                     </div>
@@ -185,7 +201,7 @@
                             </a>
                             <!-- Awards Logos -->
                             <div class="flex items-center gap-x-4 pt-4">
-                                <img src="/src/assets/images/Reviews.webp" alt="Sortlist Reviews" class="h-22 w-auto">
+                                <img src="/src/assets/images/Reviews.webp" alt="Sortlist Reviews" class=" h-auto w-auto">
                             </div>
                         </div>
                         <!-- Right Column: Form -->
@@ -197,25 +213,43 @@
                                 <!-- Name Input -->
                                 <div class="relative">
                                     <i class="fas fa-user absolute top-1/2 left-5 -translate-y-1/2 text-white text-lg" aria-hidden="true"></i>
-                                    <input type="text" placeholder="let us know your name?" aria-label="Your name" class="w-full bg-page-background rounded-full p-4 pl-14 border-2 border-border-custom focus:border-accent focus:ring-2 focus:ring-accent/50 focus:outline-none transition-all duration-300">
+                                    <input
+                                        type="text"
+                                        placeholder="let us know your name?"
+                                        aria-label="Your name"
+                                        class="w-full bg-page-background rounded-full p-4 pl-14 border-2 border-border-custom focus:border-accent focus:ring-2 focus:ring-accent/50 focus:outline-none transition-all duration-300"
+                                    >
                                 </div>
                                 <!-- Email Input -->
                                 <div class="relative">
                                     <i class="fas fa-at absolute top-1/2 left-5 -translate-y-1/2 text-white text-lg" aria-hidden="true"></i>
-                                    <input type="email" placeholder="Let’s have your email?" aria-label="Your email" class="w-full bg-page-background rounded-full p-4 pl-14 border-2 border-border-custom focus:border-accent focus:ring-2 focus:ring-accent/50 focus:outline-none transition-all duration-300">
+                                    <input
+                                        type="email"
+                                        placeholder="Let’s have your email?"
+                                        aria-label="Your email"
+                                        class="w-full bg-page-background rounded-full p-4 pl-14 border-2 border-border-custom focus:border-accent focus:ring-2 focus:ring-accent/50 focus:outline-none transition-all duration-300"
+                                    >
                                 </div>
-                                <!-- Phone Input -->
-                                <div class="relative flex items-center w-full bg-page-background rounded-full border-2 border-border-custom focus-within:border-accent focus-within:ring-2 focus-within:ring-accent/50 transition-all duration-300">
-                                    <div class="flex items-center gap-x-2 pl-4 flex-shrink-0">
-                                        <img src="https://flagcdn.com/w20/eg.png" alt="Egypt Flag" class="h-4">
-                                        <span class="text-white">+20</span>
-                                    </div>
-                                    <input type="tel" aria-label="Your phone number" class="w-full bg-transparent p-4 border-none focus:outline-none">
+                                <!-- Phone Input (intl-tel-input plugin) -->
+                                <div class="relative">
+                                    <input
+                                        type="tel"
+                                        name="phone"
+                                        aria-label="Your phone number"
+                                        placeholder="Your mobile number"
+                                        class="js-intl-tel w-full bg-page-background rounded-full p-4 border-2 border-border-custom focus:border-accent focus:ring-2 focus:ring-accent/50 focus:outline-none transition-all duration-300 text-white"
+                                    >
+                                    <input type="hidden" name="phone_full" class="js-intl-tel-full">
                                 </div>
                                 <!-- Message Text -->
                                 <div class="relative">
                                     <i class="fas fa-comment-dots absolute top-6 left-5 -translate-y-1/2 text-white text-lg" aria-hidden="true"></i>
-                                    <textarea placeholder="Do you like to tell us about your business?" aria-label="Your message" rows="4" class="w-full bg-page-background rounded-2xl p-4 pl-14 border-2 border-border-custom focus:border-accent focus:ring-2 focus:ring-accent/50 focus:outline-none transition-all duration-300"></textarea>
+                                    <textarea
+                                        placeholder="Do you like to tell us about your business?"
+                                        aria-label="Your message"
+                                        rows="4"
+                                        class="w-full bg-page-background rounded-2xl p-4 pl-14 border-2 border-border-custom focus:border-accent focus:ring-2 focus:ring-accent/50 focus:outline-none transition-all duration-300"
+                                    ></textarea>
                                 </div>
                                 <!-- Submit Contact Button -->
                                 <button type="submit" class="w-full text-white font-bold py-4 px-8 rounded-full bg-accent hover:opacity-90 transition text-lg flex items-center justify-center gap-x-3">
@@ -232,50 +266,56 @@
       </div>-->
             </section>
             <!-- AWARDS CARD SECTION v2.2 (Continuous Scroll Animation) -->
-            <section id="awards-card" class="relative -mt-20 z-10">
-                <div class="container">
-                    <div class="bg-white text-gray-800 rounded-3xl shadow-2xl p-8 max-w-5xl mx-auto">
-                        <div class="flex flex-col md:flex-row justify-between items-center gap-8 md:gap-6">
-                            <!-- Left Column (30% width on desktop) -->
-                            <div class="w-full md:w-3/12 text-center">
-                                <span class="text-6xl font-extrabold text-accent">10+</span>
-                                <h3 class="text-xl leading-tight font-semibold mt-2">
-                                    Years Experience
-                                    <span class="block text-gray-500 font-normal text-base">With Global Awards</span>
-                                </h3>
-                            </div>
-                            <!-- Divider -->
-                            <div class="w-full md:w-px h-px md:h-24 bg-gray-400"></div>
-                            <!-- Right Column (70% width on desktop) -->
-                            <div class="w-full md:w-9/12">
-                                <!-- This is our new scrolling container -->
-                                <div class="scrolling-wrapper">
-                                    <!-- The track contains TWO sets of the logos for a seamless loop -->
-                                    <div class="scrolling-track">
-                                        <!-- Set 1 -->
-                                        <img src="https://intcore-website-s3.s3.eu-central-1.amazonaws.com/images/awards/img_4.webp" alt="Clutch Top Web Developers 2023" class="h-20 mx-8">
-                                        <img src="https://intcore-website-s3.s3.eu-central-1.amazonaws.com/images/awards/img_3.webp" alt="Sortlist Top Rated Agency" class="h-14 mx-8">
-                                        <img src="https://intcore-website-s3.s3.eu-central-1.amazonaws.com/images/awards/img_2.webp" alt="Clutch Top Company Egypt" class="h-20 mx-8">
-                                        <img src="https://intcore-website-s3.s3.eu-central-1.amazonaws.com/images/awards/img_6.webp" alt="Sortlist Best in Class" class="h-14 mx-8">
-                                        <img src="https://intcore-website-s3.s3.eu-central-1.amazonaws.com/images/awards/img_5.webp" alt="Clutch Top B2B Companies" class="h-20 mx-8">
-                                        <!-- Set 2 (Duplicate) -->
-                                        <img src="https://intcore-website-s3.s3.eu-central-1.amazonaws.com/images/awards/img_4.webp" alt="Clutch Top Web Developers 2023" class="h-20 mx-8">
-                                        <img src="https://intcore-website-s3.s3.eu-central-1.amazonaws.com/images/awards/img_3.webp" alt="Sortlist Top Rated Agency" class="h-14 mx-8">
-                                        <img src="https://intcore-website-s3.s3.eu-central-1.amazonaws.com/images/awards/img_2.webp" alt="Clutch Top Company Egypt" class="h-20 mx-8">
-                                        <img src="https://intcore-website-s3.s3.eu-central-1.amazonaws.com/images/awards/img_6.webp" alt="Sortlist Best in Class" class="h-14 mx-8">
-                                        <img src="https://intcore-website-s3.s3.eu-central-1.amazonaws.com/images/awards/img_5.webp" alt="Clutch Top B2B Companies" class="h-20 mx-8">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+            <section id="awards-card" class="relative z-30">
+              <!-- Flow spacers so other sections don't break -->
+              <div aria-hidden="true" class="h-[160px] md:h-[200px]"></div>
+
+              <!-- Absolutely centered card straddling the boundary -->
+              <div class="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 w-full max-w-6xl px-4 pointer-events-auto">
+                <div class="bg-white text-gray-800 rounded-3xl shadow-2xl p-8 max-w-5xl mx-auto">
+                  <div class="flex flex-col md:flex-row justify-between items-center gap-8 md:gap-6">
+                    <!-- Left Column (30% width on desktop) -->
+                    <div class="w-full md:w-3/12 text-center">
+                      <span class="text-6xl font-extrabold text-accent">10+</span>
+                      <h3 class="text-xl leading-tight font-semibold mt-2">
+                        Years Experience
+                        <span class="block text-gray-500 font-normal text-base">With Global Awards</span>
+                      </h3>
                     </div>
+                    <!-- Divider -->
+                    <div class="w-full md:w-px h-px md:h-24 bg-gray-400"></div>
+                    <!-- Right Column (70% width on desktop) -->
+                    <div class="w-full md:w-9/12">
+                      <!-- Scrolling logos container -->
+                      <div class="scrolling-wrapper">
+                        <div class="scrolling-track">
+                          <!-- Set 1 -->
+                          <img src="https://intcore-website-s3.s3.eu-central-1.amazonaws.com/images/awards/img_4.webp" alt="Clutch Top Web Developers 2023" class="h-20 mx-8">
+                          <img src="https://intcore-website-s3.s3.eu-central-1.amazonaws.com/images/awards/img_3.webp" alt="Sortlist Top Rated Agency" class="h-20 mx-8">
+                          <img src="https://intcore-website-s3.s3.eu-central-1.amazonaws.com/images/awards/img_2.webp" alt="Clutch Top Company Egypt" class="h-20 mx-8">
+                          <img src="https://intcore-website-s3.s3.eu-central-1.amazonaws.com/images/awards/img_6.webp" alt="Sortlist Best in Class" class="h-20 mx-8">
+                          <img src="https://intcore-website-s3.s3.eu-central-1.amazonaws.com/images/awards/img_5.webp" alt="Clutch Top B2B Companies" class="h-20 mx-8">
+                          <!-- Set 2 (Duplicate) -->
+                          <img src="https://intcore-website-s3.s3.eu-central-1.amazonaws.com/images/awards/img_4.webp" alt="Clutch Top Web Developers 2023" class="h-20 mx-8">
+                          <img src="https://intcore-website-s3.s3.eu-central-1.amazonaws.com/images/awards/img_3.webp" alt="Sortlist Top Rated Agency" class="h-20 mx-8">
+                          <img src="https://intcore-website-s3.s3.eu-central-1.amazonaws.com/images/awards/img_2.webp" alt="Clutch Top Company Egypt" class="h-20 mx-8">
+                          <img src="https://intcore-website-s3.s3.eu-central-1.amazonaws.com/images/awards/img_6.webp" alt="Sortlist Best in Class" class="h-20 mx-8">
+                          <img src="https://intcore-website-s3.s3.eu-central-1.amazonaws.com/images/awards/img_5.webp" alt="Clutch Top B2B Companies" class="h-20 mx-8">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
+              </div>
+
+              <!-- Bottom spacer to balance layout -->
+              <div aria-hidden="true" class="h-[160px] md:h-[200px]"></div>
             </section>
             <!-- Services Section -->
-            <section id="services" class="bg-service-background text-gray-800 py-24 rounded-t-3xl ">
+            <section id="services" class="bg-gray-50 text-gray-800 py-28 rounded-t-3xl ">
                 <div class="container mx-auto px-20">
                     <!-- Section Header -->
-                    <div class="max-w-2xl mb-12">
+                    <div class="max-w-2xl mb-20">
                         <h5 class="text-gray-900 font-semibold text-4xl">How we help</h5>
                         <h2 class="text-4xl md:text-5xl font-bold mt-1 text-accent">
                             Businesses Grow?
@@ -562,11 +602,14 @@
                         </div>
                         <!-- Slider -->
                         <div class="mt-16 mx-auto relative">
+                            <!-- Previous Control -->
+                            <button aria-label="Previous review" id="ts-prev" class="ts-arrow absolute top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full flex items-center justify-center">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
                             <!-- Next Control -->
                             <button aria-label="Next review" id="ts-next" class="ts-arrow absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 rounded-full flex items-center justify-center">
                                 <i class="fas fa-chevron-right"></i>
                             </button>
-
                             <!-- Viewport -->
                             <div class="ts-viewport overflow-hidden px-14">
                                 <!-- Track (stacked for cross-fade) -->
@@ -587,14 +630,17 @@
                                                 <div class="flex flex-col items-center justify-center space-y-4 border-t-2 md:border-t-0 md:border-l-2 border-border-custom pt-8 md:pt-0 md:pl-8">
                                                     <img src="https://intcore-website-s3.s3.eu-central-1.amazonaws.com/images/testimonials/hayachatapp.webp" class="h-40 w-40 object-contain" alt="Haya Chat App Logo">
                                                     <div class="flex items-center gap-x-1 text-yellow-400">
-                                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
                                                     </div>
                                                     <span class="text-secondary font-semibold">5/5</span>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-
                                     <!-- Slide 2 -->
                                     <div class="testimonial-slide w-full">
                                         <div class="bg-white rounded-3xl w-full p-8 md:p-12 shadow-2xl border border-gray-100">
@@ -611,14 +657,17 @@
                                                 <div class="flex flex-col items-center justify-center space-y-4 border-t-2 md:border-t-0 md:border-l-2 border-border-custom pt-8 md:pt-0 md:pl-8">
                                                     <img src="https://intcore-website-s3.s3.eu-central-1.amazonaws.com/images/testimonials/createapp.webp" class="h-40 w-40 object-contain" alt="Create App Logo">
                                                     <div class="flex items-center gap-x-1 text-yellow-400">
-                                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star-half-alt"></i>
                                                     </div>
                                                     <span class="text-secondary font-semibold">4.7/5</span>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-
                                     <!-- Slide 3 -->
                                     <div class="testimonial-slide w-full">
                                         <div class="bg-white rounded-3xl w-full p-8 md:p-12 shadow-2xl border border-gray-100">
@@ -635,14 +684,17 @@
                                                 <div class="flex flex-col items-center justify-center space-y-4 border-t-2 md:border-t-0 md:border-l-2 border-border-custom pt-8 md:pt-0 md:pl-8">
                                                     <img src="https://intcore-website-s3.s3.eu-central-1.amazonaws.com/images/testimonials/ORB.webp" class="h-40 w-40 object-contain" alt="ORB Logo">
                                                     <div class="flex items-center gap-x-1 text-yellow-400">
-                                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
                                                     </div>
                                                     <span class="text-secondary font-semibold">5/5</span>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-
                                     <!-- Slide 4 -->
                                     <div class="testimonial-slide w-full">
                                         <div class="bg-white rounded-3xl w-full p-8 md:p-12 shadow-2xl border border-gray-100">
@@ -659,14 +711,17 @@
                                                 <div class="flex flex-col items-center justify-center space-y-4 border-t-2 md:border-t-0 md:border-l-2 border-border-custom pt-8 md:pt-0 md:pl-8">
                                                     <img src="https://intcore-website-s3.s3.eu-central-1.amazonaws.com/images/testimonials/zollarsapp.webp" class="h-40 w-40 object-contain" alt="Zollars App Logo">
                                                     <div class="flex items-center gap-x-1 text-yellow-400">
-                                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star-half-alt"></i>
                                                     </div>
                                                     <span class="text-secondary font-semibold">4.75/5</span>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-
                                     <!-- Slide 5 -->
                                     <div class="testimonial-slide w-full">
                                         <div class="bg-white rounded-3xl w-full p-8 md:p-12 shadow-2xl border border-gray-100">
@@ -683,14 +738,17 @@
                                                 <div class="flex flex-col items-center justify-center space-y-4 border-t-2 md:border-t-0 md:border-l-2 border-border-custom pt-8 md:pt-0 md:pl-8">
                                                     <img src="https://intcore-website-s3.s3.eu-central-1.amazonaws.com/images/testimonials/aerbag.webp" class="h-40 w-40 object-contain" alt="AerBag Logo">
                                                     <div class="flex items-center gap-x-1 text-yellow-400">
-                                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
                                                     </div>
                                                     <span class="text-secondary font-semibold">5/5</span>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-
                                     <!-- Slide 6 -->
                                     <div class="testimonial-slide w-full">
                                         <div class="bg-white rounded-3xl w-full p-8 md:p-12 shadow-2xl border border-gray-100">
@@ -707,7 +765,11 @@
                                                 <div class="flex flex-col items-center justify-center space-y-4 border-t-2 md:border-t-0 md:border-l-2 border-border-custom pt-8 md:pt-0 md:pl-8">
                                                     <img src="https://intcore-website-s3.s3.eu-central-1.amazonaws.com/images/testimonials/efghermes.webp" class="h-40 w-40 object-contain" alt="EFG Hermes Logo">
                                                     <div class="flex items-center gap-x-1 text-yellow-400">
-                                                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
                                                     </div>
                                                     <span class="text-secondary font-semibold">5/5</span>
                                                 </div>
@@ -716,11 +778,9 @@
                                     </div>
                                 </div>
                             </div>
-
                             <!-- Dynamic Dots -->
                             <div id="ts-dots" class="flex justify-center gap-x-2 mt-8"></div>
                         </div>
-                        
                     </div>
                 </section>
                 <!-- Contact Us Section -->
@@ -749,13 +809,15 @@
                                     </div>
                                     <!-- Phone & Budget Row -->
                                     <div class="grid md:grid-cols-2 gap-5">
-                                        <!-- Phone Input -->
-                                        <div class="relative flex items-center w-full bg-gray-100 rounded-full border border-gray-200 focus-within:border-accent focus-within:ring-2 focus-within:ring-accent/50 transition-all duration-300">
-                                            <div class="flex items-center gap-x-2 pl-4 flex-shrink-0">
-                                                <img src="https://flagcdn.com/w20/eg.png" alt="Egypt Flag" class="h-4">
-                                                <span class="text-gray-500">+20</span>
-                                            </div>
-                                            <input type="tel" class="w-full bg-transparent p-4 border-none focus:outline-none text-gray-800">
+                                        <!-- Phone Input (intl-tel-input plugin) -->
+                                        <div class="relative">
+                                            <input
+                                                type="tel"
+                                                name="phone"
+                                                placeholder="Your mobile number"
+                                                class="js-intl-tel w-full bg-gray-100 rounded-full p-4 border border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/50 focus:outline-none transition-all duration-300 text-gray-800"
+                                            >
+                                            <input type="hidden" name="phone_full" class="js-intl-tel-full">
                                         </div>
                                         <!-- Budget Select -->
                                         <div class="relative">
@@ -863,19 +925,19 @@
             and performance marketing.
                             </p>
                             <div class="flex space-x-3 text-xl">
-                                <a href="#" aria-label="Facebook" class="flex items-center justify-center w-10 h-10 border border-border-custom rounded-full hover:bg-accent hover:border-accent transition-colors">
+                                <a href="https://facebook.com/intcorecompany" aria-label="Facebook" class="flex items-center justify-center w-10 h-10 border border-border-custom rounded-full hover:bg-accent hover:border-accent transition-colors">
                                     <i class="fab fa-facebook-f"></i>
                                 </a>
-                                <a href="#" aria-label="Behance" class="flex items-center justify-center w-10 h-10 border border-border-custom rounded-full hover:bg-accent hover:border-accent transition-colors">
+                                <a href="https://www.behance.net/intcorecompany" aria-label="Behance" class="flex items-center justify-center w-10 h-10 border border-border-custom rounded-full hover:bg-accent hover:border-accent transition-colors">
                                     <i class="fab fa-behance"></i>
                                 </a>
-                                <a href="#" aria-label="X (Twitter)" class="flex items-center justify-center w-10 h-10 border border-border-custom rounded-full hover:bg-accent hover:border-accent transition-colors">
+                                <a href="https://x.com/intcore" aria-label="X (Twitter)" class="flex items-center justify-center w-10 h-10 border border-border-custom rounded-full hover:bg-accent hover:border-accent transition-colors">
                                     <i class="fa-brands fa-x-twitter"></i>
                                 </a>
-                                <a href="#" aria-label="Instagram" class="flex items-center justify-center w-10 h-10 border border-border-custom rounded-full hover:bg-accent hover:border-accent transition-colors">
+                                <a href="https://instagram.com/intcorecompany" aria-label="Instagram" class="flex items-center justify-center w-10 h-10 border border-border-custom rounded-full hover:bg-accent hover:border-accent transition-colors">
                                     <i class="fab fa-instagram"></i>
                                 </a>
-                                <a href="#" aria-label="LinkedIn" class="flex items-center justify-center w-10 h-10 border border-border-custom rounded-full hover:bg-accent hover:border-accent transition-colors">
+                                <a href="https://www.linkedin.com/company/intcore" aria-label="LinkedIn" class="flex items-center justify-center w-10 h-10 border border-border-custom rounded-full hover:bg-accent hover:border-accent transition-colors">
                                     <i class="fab fa-linkedin-in"></i>
                                 </a>
                             </div>
@@ -892,13 +954,13 @@
                                     <a href="about.html" class="text-white hover:text-accent transition-colors">About us</a>
                                 </li>
                                 <li>
-                                    <a href="#" class="text-white hover:text-accent transition-colors" href="careers.html">Careers</a>
+                                    <a href="careers.html" class="text-white hover:text-accent transition-colors">Careers</a>
                                 </li>
                                 <li>
-                                    <a href="#" class="text-white hover:text-accent transition-colors">Blog & News</a>
+                                    <a href="blog" class="text-white hover:text-accent transition-colors">Blog & News</a>
                                 </li>
                                 <li>
-                                    <a href="#" class="text-white hover:text-accent transition-colors">Case studies</a>
+                                    <a href="case-studies.html" class="text-white hover:text-accent transition-colors">Case studies</a>
                                 </li>
                             </ul>
                         </div>
@@ -914,13 +976,13 @@
                                     <a href="mobile.html" class="text-white hover:text-accent transition-colors">Mobile App Development</a>
                                 </li>
                                 <li>
-                                    <a href="#" class="text-white hover:text-accent transition-colors" href="web-app.html">Web App Development</a>
+                                    <a href="web-app.html" class="text-white hover:text-accent transition-colors">Web App Development</a>
                                 </li>
                                 <li>
                                     <a href="marketing.html" class="text-white hover:text-accent transition-colors">Digital Marketing</a>
                                 </li>
                                 <li>
-                                    <a href="#" class="text-white hover:text-accent transition-colors" href="hosting.html">Hosting & Servers</a>
+                                    <a href="hosting.html" class="text-white hover:text-accent transition-colors">Hosting & Servers</a>
                                 </li>
                             </ul>
                         </div>
@@ -977,8 +1039,13 @@
                             <input type="email" placeholder="Let’s have your professional email" class="w-full bg-gray-100 rounded-full p-4 pl-14 border border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/50 focus:outline-none transition-all duration-300 text-gray-800">
                         </div>
                         <div class="relative">
-                            <i class="fas fa-mobile-alt absolute top-1/2 left-5 -translate-y-1/2 text-secondary text-lg"></i>
-                            <input type="tel" placeholder="What about your Mobile?" class="w-full bg-gray-100 rounded-full p-4 pl-14 border border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/50 focus:outline-none transition-all duration-300 text-gray-800">
+                            <input
+                                type="tel"
+                                name="phone"
+                                placeholder="What about your Mobile?"
+                                class="js-intl-tel w-full bg-gray-100 rounded-full p-4 border border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/50 focus:outline-none transition-all duration-300 text-gray-800"
+                            >
+                            <input type="hidden" name="phone_full" class="js-intl-tel-full">
                         </div>
                         <div class="relative">
                             <textarea placeholder="Like to tell us about your business?" rows="4" class="w-full bg-gray-100 rounded-2xl p-4 pl-6 border border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/50 focus:outline-none transition-all duration-300 text-gray-800"></textarea>
@@ -1012,8 +1079,13 @@
                             <input type="email" placeholder="Let’s have your professional email" class="w-full bg-gray-100 rounded-full p-4 pl-14 border border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/50 focus:outline-none transition-all duration-300 text-gray-800">
                         </div>
                         <div class="relative">
-                            <i class="fas fa-mobile-alt absolute top-1/2 left-5 -translate-y-1/2 text-secondary text-lg"></i>
-                            <input type="tel" placeholder="What about your Mobile?" class="w-full bg-gray-100 rounded-full p-4 pl-14 border border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/50 focus:outline-none transition-all duration-300 text-gray-800">
+                            <input
+                                type="tel"
+                                name="phone"
+                                placeholder="What about your Mobile?"
+                                class="js-intl-tel w-full bg-gray-100 rounded-full p-4 border border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/50 focus:outline-none transition-all duration-300 text-gray-800"
+                            >
+                            <input type="hidden" name="phone_full" class="js-intl-tel-full">
                         </div>
                         <div class="relative">
                             <textarea placeholder="Like to tell us about your business?" rows="4" class="w-full bg-gray-100 rounded-2xl p-4 pl-6 border border-gray-200 focus:border-accent focus:ring-2 focus:ring-accent/50 focus:outline-none transition-all duration-300 text-gray-800"></textarea>
@@ -1025,6 +1097,7 @@
                     </form>
                 </div>
             </div>
-          <script type="module" src="/src/js/main.js"></script>
+            <!-- intl-tel-input JS -->
+            <script type="module" src="/src/js/main.js"></script>
         </body>
     </html>

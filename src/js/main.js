@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   console.log("Professional environment is live. Reusable scripts loaded.");
-
+  
   // ON-SCROLL REPEATING ANIMATION SYSTEM
   const observer = new IntersectionObserver(
     (entries) => {
@@ -357,5 +357,87 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }, { passive: true });
 })();
+
+  // =======================================================
+  // Phone inputs: intl-tel-input (self-hosted, no CDN calls)
+  // =======================================================
+  function setupIntlTelInputs(){
+    const inputs = Array.from(document.querySelectorAll('.js-intl-tel'));
+    if (!window.intlTelInput || !inputs.length) return;
+
+    // Load local utils once. No external requests.
+    if (window.intlTelInputGlobals && window.intlTelInputGlobals.loadUtils) {
+      // best-effort; do not block init
+      window.intlTelInputGlobals.loadUtils('/vendor/phone/utils.js').catch(() => {});
+    }
+
+    const instances = new Map();
+
+    inputs.forEach((input) => {
+      const iti = window.intlTelInput(input, {
+        separateDialCode: true,
+        preferredCountries: ['ae','eg','sa','us','gb'],
+        // Avoid GeoIP and any network requests in dev; set a sane default
+        initialCountry: 'eg',
+        nationalMode: false,
+        // NOTE: no utilsScript here; we load it once above
+      });
+      instances.set(input, iti);
+
+      // Ensure hidden full number field exists next to each input
+      let hidden = input.parentElement?.querySelector('.js-intl-tel-full');
+      if (!hidden) {
+        hidden = document.createElement('input');
+        hidden.type = 'hidden';
+        hidden.name = 'phone_full';
+        hidden.className = 'js-intl-tel-full';
+        input.insertAdjacentElement('afterend', hidden);
+      }
+    });
+    console.log(`[intl-tel-input] initialized on ${inputs.length} input(s).`);
+
+    // Validate and capture on submit (per form)
+    document.querySelectorAll('form').forEach((form) => {
+      form.addEventListener('submit', (e) => {
+        const formPhones = Array.from(form.querySelectorAll('.js-intl-tel'));
+        if (!formPhones.length) return;
+
+        let invalidFound = false;
+        formPhones.forEach((input) => {
+          const iti = instances.get(input);
+          if (!iti) return;
+
+          const hidden = input.parentElement?.querySelector('.js-intl-tel-full');
+          if (hidden) hidden.value = iti.getNumber(); // E.164
+
+          // If utils loaded we can validate; if not, skip validation
+          if (window.intlTelInputGlobals?.loadedUtils && !iti.isValidNumber()) {
+            invalidFound = true;
+            input.setCustomValidity('Please enter a valid phone number.');
+            input.reportValidity();
+            input.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            input.focus({ preventScroll: true });
+          } else {
+            input.setCustomValidity('');
+          }
+        });
+
+        if (invalidFound) {
+          e.preventDefault();
+        }
+      });
+    });
+  }
+
+  // Initialize using self-hosted files only. No CDN fallback logic.
+  try {
+    if (window.intlTelInput) {
+      setupIntlTelInputs();
+    } else {
+      console.warn('[intl-tel-input] library missing. Check /vendor paths.');
+    }
+  } catch (err) {
+    console.error('[intl-tel-input] init error:', err);
+  }
 
 });
