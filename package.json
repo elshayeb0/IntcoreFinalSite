@@ -4,11 +4,11 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite --host",
+    "dev": "vite --config config/vite.config.js",
     "tw:watch": "tailwindcss -c config/tailwind.config.js -i src/css/style.css -o public/style.css --watch",
     "build:css": "tailwindcss -c config/tailwind.config.js -i src/css/style.css -o public/style.css --minify",
-    "build": "npm run build:css && vite build",
-    "preview": "vite preview"
+    "build": "npm run build:css && vite build --config config/vite.config.js",
+    "preview": "vite preview --config config/vite.config.js"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.21",
